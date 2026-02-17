@@ -34,38 +34,7 @@
             font-weight: 400;
         }
 
-        /* TOP BANNER */
-        .top-banner {
-            background: var(--primary-blue);
-            padding: 0.75rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .top-banner-left {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-        
-        .top-banner a {
-            color: rgba(255,255,255,0.85);
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.85rem;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: color 0.2s;
-            font-weight: 400;
-        }
-        
-        .top-banner a:hover { 
-            color: var(--white); 
-        }
-
-        /* HEADER */
+        /* HEADER - now the topmost element */
         header {
             background: var(--white);
             padding: 1.5rem 2rem;
@@ -509,23 +478,25 @@
             font-weight: 300;
         }
 
-        /* SERVICES */
-        .services-grid {
+        /* SERVICES + GALLERY (same card style) */
+        .services-grid, .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
         
-        .service-card {
+        .service-card, .gallery-item {
             background: var(--white);
             border: 2px solid var(--border);
             border-radius: 8px;
             overflow: hidden;
             transition: all 0.3s;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
         }
         
-        .service-card:hover {
+        .service-card:hover, .gallery-item:hover {
             border-color: var(--primary-blue);
             transform: translateY(-5px);
             box-shadow: var(--shadow-lift);
@@ -546,6 +517,7 @@
         
         .sc-body {
             padding: 1.5rem;
+            flex: 1;
         }
         
         .sc-body p {
@@ -575,16 +547,7 @@
             font-weight: 500;
         }
 
-        /* GALLERY GRID */
-        .gallery-intro {
-            font-size: 1.05rem;
-            color: var(--muted);
-            margin-bottom: 2rem;
-            border-left: 4px solid var(--primary-blue);
-            padding-left: 1.5rem;
-            font-weight: 400;
-        }
-
+        /* GALLERY FILTER */
         .gallery-filter {
             display: flex;
             gap: 0.75rem;
@@ -613,182 +576,70 @@
             color: var(--white);
         }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .gallery-item {
-            background: var(--white);
-            border: 3px solid var(--primary-blue);
-            border-radius: 10px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: var(--shadow);
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lift);
-            border-color: var(--primary-blue);
-            border-width: 4px;
-        }
-
-        .gallery-image {
-            width: 100%;
-            height: 250px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .gallery-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-
-        .gallery-item:hover .gallery-image img {
-            transform: scale(1.05);
-        }
-
-        .gallery-content {
-            padding: 1.5rem;
-        }
-
-        .gallery-category {
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.75rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: var(--primary-blue);
-            margin-bottom: 0.75rem;
-            font-weight: 600;
-        }
-
-        .gallery-title {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text);
-            margin-bottom: 0.75rem;
-            line-height: 1.3;
-        }
-
-        .gallery-description {
-            font-size: 0.95rem;
+        .gallery-intro {
+            font-size: 1.05rem;
             color: var(--muted);
-            line-height: 1.6;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary-blue);
+            padding-left: 1.5rem;
             font-weight: 400;
         }
 
-        /* IMAGES SECTION */
-        .images-filter {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-            margin-bottom: 2.5rem;
-        }
-        
-        .img-filter-btn {
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
-            padding: 0.65rem 1.5rem;
-            border: 2px solid var(--border);
-            border-radius: 6px;
-            background: var(--white);
-            color: var(--muted);
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 500;
-        }
-        
-        .img-filter-btn:hover,
-        .img-filter-btn.active {
-            border-color: var(--primary-blue);
-            background: var(--primary-blue);
-            color: var(--white);
-        }
-
-        .images-grid {
+        /* IMAGES SECTION - SIMPLIFIED: only images with text, no category bar */
+        .images-simple-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2.5rem;
+            margin-top: 2rem;
         }
 
-        .image-frame {
-            cursor: pointer;
+        .image-card {
+            background: var(--white);
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
             transition: all 0.3s;
         }
 
-        .image-frame:hover {
+        .image-card:hover {
             transform: translateY(-5px);
-        }
-
-        .frame-border {
-            padding: 15px;
-            background: var(--white);
-            border: 4px solid var(--primary-blue);
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-            position: relative;
-        }
-
-        .image-frame:hover .frame-border {
             box-shadow: var(--shadow-lift);
-            border-width: 5px;
+            border-color: var(--primary-blue);
         }
 
-        .frame-border::before {
-            content: '';
-            position: absolute;
-            inset: 8px;
-            border: 1px solid rgba(0, 64, 128, 0.2);
-            border-radius: 4px;
-            pointer-events: none;
-        }
-
-        .frame-content {
+        .image-placeholder {
             width: 100%;
             aspect-ratio: 4/3;
-            overflow: hidden;
-            border-radius: 4px;
-            background: var(--off-white);
-        }
-
-        .frame-content img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.3s;
-        }
-
-        .image-frame:hover .frame-content img {
-            transform: scale(1.05);
-        }
-
-        .frame-caption {
-            padding: 1rem 0.5rem 0;
-        }
-
-        .frame-caption h4 {
+            background: linear-gradient(145deg, #e6f0ff, #b3c7e6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-family: 'Oswald', sans-serif;
-            font-size: 1.05rem;
+            font-size: 1.5rem;
             font-weight: 600;
             color: var(--primary-blue);
-            margin-bottom: 0.35rem;
-            line-height: 1.3;
+            text-transform: uppercase;
+            border-bottom: 3px solid var(--primary-blue);
         }
 
-        .frame-caption p {
-            font-size: 0.9rem;
+        .image-info {
+            padding: 1.5rem;
+        }
+
+        .image-info h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .image-info p {
+            font-size: 1rem;
             color: var(--muted);
-            line-height: 1.5;
+            line-height: 1.6;
             font-weight: 400;
+            margin: 0;
         }
 
         /* TOOLS */
@@ -1168,11 +1019,9 @@
 
         /* RESPONSIVE */
         @media (max-width: 1100px) {
-            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .services-grid, .gallery-grid, .images-simple-grid { grid-template-columns: repeat(2, 1fr); }
             .tools-grid { grid-template-columns: repeat(2, 1fr); }
             .about-strip-inner { grid-template-columns: repeat(2, 1fr); }
-            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-            .images-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 900px) {
@@ -1187,17 +1036,6 @@
         }
 
         @media (max-width: 768px) {
-            .top-banner {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem;
-            }
-            
-            .top-banner-left {
-                flex-direction: column;
-                gap: 0.75rem;
-            }
-            
             header {
                 flex-direction: column;
                 gap: 1rem;
@@ -1226,10 +1064,8 @@
                 padding: 2rem 1.25rem;
             }
             
-            .services-grid,
-            .tools-grid,
-            .gallery-grid,
-            .images-grid {
+            .services-grid, .gallery-grid, .images-simple-grid,
+            .tools-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -1282,22 +1118,7 @@
 </head>
 <body>
 
-<!-- TOP BANNER -->
-<div class="top-banner">
-    <div class="top-banner-left">
-        <a href="mailto:info@informaticsconsultancyfirm.com">
-            info@informaticsconsultancyfirm.com
-        </a>
-        <a href="tel:+23276114224">
-            +232 76 114224
-        </a>
-        <a href="#" onclick="navigate('contact');return false;">
-            Freetown, Sierra Leone
-        </a>
-    </div>
-</div>
-
-<!-- HEADER -->
+<!-- HEADER - now directly at top -->
 <header>
     <div class="brand">
         <div class="brand-logo">
@@ -1573,7 +1394,7 @@
     </div>
 </div>
 
-<!-- GALLERY SECTION -->
+<!-- GALLERY SECTION (restyled like services) -->
 <div class="page-section" id="section-gallery">
     <div class="section-inner">
         <div class="section-title-bar">
@@ -1585,133 +1406,68 @@
         <p class="gallery-intro">Browse through our collection of successful data science and analytics projects. Click on any project to view it live in an interactive modal.</p>
         
         <div class="gallery-filter">
-            <button class="gfilter-btn active" onclick="filterGallery('all', this)">
-                All Projects
-            </button>
-            <button class="gfilter-btn" onclick="filterGallery('health', this)">
-                Health Analytics
-            </button>
-            <button class="gfilter-btn" onclick="filterGallery('ml', this)">
-                Machine Learning
-            </button>
-            <button class="gfilter-btn" onclick="filterGallery('tool', this)">
-                Software Tools
-            </button>
+            <button class="gfilter-btn active" onclick="filterGallery('all', this)">All Projects</button>
+            <button class="gfilter-btn" onclick="filterGallery('health', this)">Health Analytics</button>
+            <button class="gfilter-btn" onclick="filterGallery('ml', this)">Machine Learning</button>
+            <button class="gfilter-btn" onclick="filterGallery('tool', this)">Software Tools</button>
         </div>
 
         <div class="gallery-grid">
             <!-- Project 1 -->
             <div class="gallery-item" data-cat="health ml" onclick="openModal('https://mohamedsillahkanu.github.io/Hypertension-Dashboard/', 'Hypertension Management System')">
-                <div class="gallery-image">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Hypertension Dashboard" style="background: linear-gradient(135deg, #004080 0%, #0059b3 100%);">
+                <div class="sc-head">
+                    <h3>Hypertension Management System</h3>
                 </div>
-                <div class="gallery-content">
-                    <div class="gallery-category">Health Analytics</div>
-                    <h3 class="gallery-title">Hypertension Management System</h3>
-                    <p class="gallery-description">Intelligent monitoring and clinical prediction platform for hypertension patients.</p>
+                <div class="sc-body">
+                    <p>Intelligent monitoring and clinical prediction platform for hypertension patients.</p>
+                    <div class="sc-tags"><span class="tag">Health Analytics</span><span class="tag">ML</span></div>
                 </div>
             </div>
-
             <!-- Project 2 -->
             <div class="gallery-item" data-cat="health ml" onclick="openModal('https://mohamedsillahkanu.github.io/Heart-Disease/', 'Cardiovascular Disease Prediction')">
-                <div class="gallery-image">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Heart Disease Prediction" style="background: linear-gradient(135deg, #003366 0%, #004d99 100%);">
-                </div>
-                <div class="gallery-content">
-                    <div class="gallery-category">Machine Learning</div>
-                    <h3 class="gallery-title">Cardiovascular Disease Prediction</h3>
-                    <p class="gallery-description">ML-powered risk assessment and early detection system for CVD.</p>
-                </div>
+                <div class="sc-head"><h3>Cardiovascular Disease Prediction</h3></div>
+                <div class="sc-body"><p>ML-powered risk assessment and early detection system for CVD.</p><div class="sc-tags"><span class="tag">Machine Learning</span><span class="tag">Health</span></div></div>
             </div>
-
             <!-- Project 3 -->
             <div class="gallery-item" data-cat="health ml" onclick="openModal('https://mohamedsillahkanu.github.io/Diabetes-dashboard/', 'Diabetes Analytics Platform')">
-                <div class="gallery-image">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Diabetes Dashboard" style="background: linear-gradient(135deg, #004080 0%, #0066cc 100%);">
-                </div>
-                <div class="gallery-content">
-                    <div class="gallery-category">Health Analytics</div>
-                    <h3 class="gallery-title">Diabetes Analytics Platform</h3>
-                    <p class="gallery-description">Comprehensive diabetes management and real-time monitoring dashboard.</p>
-                </div>
+                <div class="sc-head"><h3>Diabetes Analytics Platform</h3></div>
+                <div class="sc-body"><p>Comprehensive diabetes management and real-time monitoring dashboard.</p><div class="sc-tags"><span class="tag">Health</span><span class="tag">Dashboard</span></div></div>
             </div>
-
             <!-- Project 4 -->
-            <div class="gallery-item" data-cat="ml" onclick="openModal('https://mohamedsillahkanu.github.io/colon-cancer/', 'Colon & Lung Cancer CNN Classification')">
-                <div class="gallery-image">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Cancer Classification" style="background: linear-gradient(135deg, #002952 0%, #004080 100%);">
-                </div>
-                <div class="gallery-content">
-                    <div class="gallery-category">Deep Learning</div>
-                    <h3 class="gallery-title">Colon & Lung Cancer CNN Classification</h3>
-                    <p class="gallery-description">Computer vision model for automated medical image classification.</p>
-                </div>
+            <div class="gallery-item" data-cat="ml" onclick="openModal('https://mohamedsillahkanu.github.io/colon-cancer/', 'Colon & Lung Cancer CNN')">
+                <div class="sc-head"><h3>Colon & Lung Cancer CNN</h3></div>
+                <div class="sc-body"><p>Computer vision model for automated medical image classification.</p><div class="sc-tags"><span class="tag">Deep Learning</span><span class="tag">CNN</span></div></div>
             </div>
-
             <!-- Project 5 -->
             <div class="gallery-item" data-cat="tool" onclick="openModal('https://mohamedsillahkanu.github.io/costing-tool/', 'SNT Costing Tool')">
-                <div class="gallery-image">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="SNT Costing Tool" style="background: linear-gradient(135deg, #003d73 0%, #005299 100%);">
-                </div>
-                <div class="gallery-content">
-                    <div class="gallery-category">Software Tool</div>
-                    <h3 class="gallery-title">SNT Costing Calculator</h3>
-                    <p class="gallery-description">National malaria intervention costing and planning tool.</p>
-                </div>
+                <div class="sc-head"><h3>SNT Costing Calculator</h3></div>
+                <div class="sc-body"><p>National malaria intervention costing and planning tool.</p><div class="sc-tags"><span class="tag">Software Tool</span><span class="tag">Malaria</span></div></div>
             </div>
-
             <!-- Project 6 -->
             <div class="gallery-item" data-cat="tool" onclick="openModal('https://mohamedsillahkanu.github.io/sl-nmcp-data-analysis-training-plan/', 'Data Analytics Training')">
-                <div class="gallery-image">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Training Platform" style="background: linear-gradient(135deg, #004080 0%, #0073e6 100%);">
-                </div>
-                <div class="gallery-content">
-                    <div class="gallery-category">Education</div>
-                    <h3 class="gallery-title">Data Analytics Training in R & Python</h3>
-                    <p class="gallery-description">Comprehensive NMCP training plan for data analysis.</p>
-                </div>
+                <div class="sc-head"><h3>Data Analytics Training in R & Python</h3></div>
+                <div class="sc-body"><p>Comprehensive NMCP training plan for data analysis.</p><div class="sc-tags"><span class="tag">Education</span><span class="tag">R/Python</span></div></div>
             </div>
-
             <!-- Project 7 -->
             <div class="gallery-item" data-cat="health" onclick="openModal('https://mohamedsillahkanu.github.io/tpr/', 'Test Positivity Rate')">
-                <div class="gallery-image">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Test Positivity Rate" style="background: linear-gradient(135deg, #00264d 0%, #003d73 100%);">
-                </div>
-                <div class="gallery-content">
-                    <div class="gallery-category">Epidemiology</div>
-                    <h3 class="gallery-title">Test Positivity Rate Analysis</h3>
-                    <p class="gallery-description">Malaria test positivity rate computation and geospatial visualization.</p>
-                </div>
+                <div class="sc-head"><h3>Test Positivity Rate Analysis</h3></div>
+                <div class="sc-body"><p>Malaria test positivity rate computation and geospatial visualization.</p><div class="sc-tags"><span class="tag">Epidemiology</span><span class="tag">Malaria</span></div></div>
             </div>
-
             <!-- Project 8 -->
             <div class="gallery-item" data-cat="health" onclick="openModal('https://mohamedsillahkanu.github.io/crude-incidence/', 'Crude Incidence Tool')">
-                <div class="gallery-image">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Crude Incidence" style="background: linear-gradient(135deg, #004080 0%, #0059b3 100%);">
-                </div>
-                <div class="gallery-content">
-                    <div class="gallery-category">Epidemiology</div>
-                    <h3 class="gallery-title">Crude Incidence Calculator</h3>
-                    <p class="gallery-description">Epidemiological incidence rate computation and trend analysis.</p>
-                </div>
+                <div class="sc-head"><h3>Crude Incidence Calculator</h3></div>
+                <div class="sc-body"><p>Epidemiological incidence rate computation and trend analysis.</p><div class="sc-tags"><span class="tag">Epi</span><span class="tag">Calculator</span></div></div>
             </div>
-
             <!-- Project 9 -->
             <div class="gallery-item" data-cat="health" onclick="openModal('https://mohamedsillahkanu.github.io/heatmap/', 'Reporting Matrix Heatmap')">
-                <div class="gallery-image">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Reporting Heatmap" style="background: linear-gradient(135deg, #002952 0%, #004d99 100%);">
-                </div>
-                <div class="gallery-content">
-                    <div class="gallery-category">Reporting</div>
-                    <h3 class="gallery-title">Reporting Matrix & Heatmap</h3>
-                    <p class="gallery-description">DHIS2 reporting completeness visualization across facilities.</p>
-                </div>
+                <div class="sc-head"><h3>Reporting Matrix & Heatmap</h3></div>
+                <div class="sc-body"><p>DHIS2 reporting completeness visualization across facilities.</p><div class="sc-tags"><span class="tag">Reporting</span><span class="tag">DHIS2</span></div></div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- IMAGES SECTION -->
+<!-- IMAGES SECTION - SIMPLIFIED: only images with text, no category bar -->
 <div class="page-section" id="section-images">
     <div class="section-inner">
         <div class="section-title-bar">
@@ -1721,168 +1477,89 @@
             </div>
         </div>
         
-        <div class="images-filter">
-            <button class="img-filter-btn active" onclick="filterImages('all', this)">
-                All Images
-            </button>
-            <button class="img-filter-btn" onclick="filterImages('projects', this)">
-                Projects
-            </button>
-            <button class="img-filter-btn" onclick="filterImages('team', this)">
-                Team
-            </button>
-            <button class="img-filter-btn" onclick="filterImages('events', this)">
-                Events
-            </button>
-            <button class="img-filter-btn" onclick="filterImages('office', this)">
-                Office
-            </button>
-        </div>
-
-        <div class="images-grid">
-            <!-- Project Images -->
-            <div class="image-frame" data-category="projects">
-                <div class="frame-border">
-                    <div class="frame-content">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Project 1" style="background: linear-gradient(135deg, #004080 0%, #0066cc 100%);">
-                    </div>
-                </div>
-                <div class="frame-caption">
+        <!-- Simple grid of image cards with text - no filters -->
+        <div class="images-simple-grid">
+            <!-- Row 1 -->
+            <div class="image-card">
+                <div class="image-placeholder">project-01.png</div>
+                <div class="image-info">
                     <h4>Data Dashboard Implementation</h4>
                     <p>Health analytics platform deployment</p>
                 </div>
             </div>
-
-            <div class="image-frame" data-category="projects">
-                <div class="frame-border">
-                    <div class="frame-content">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Project 2" style="background: linear-gradient(135deg, #003366 0%, #004d99 100%);">
-                    </div>
-                </div>
-                <div class="frame-caption">
+            <div class="image-card">
+                <div class="image-placeholder">project-02.png</div>
+                <div class="image-info">
                     <h4>GIS Mapping Project</h4>
                     <p>Geospatial analysis for health facilities</p>
                 </div>
             </div>
-
-            <div class="image-frame" data-category="projects">
-                <div class="frame-border">
-                    <div class="frame-content">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Project 3" style="background: linear-gradient(135deg, #002952 0%, #004080 100%);">
-                    </div>
-                </div>
-                <div class="frame-caption">
+            <div class="image-card">
+                <div class="image-placeholder">project-03.png</div>
+                <div class="image-info">
                     <h4>ML Model Development</h4>
                     <p>Predictive analytics implementation</p>
                 </div>
             </div>
-
-            <!-- Team Images -->
-            <div class="image-frame" data-category="team">
-                <div class="frame-border">
-                    <div class="frame-content">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Team 1" style="background: linear-gradient(135deg, #004080 0%, #0073e6 100%);">
-                    </div>
-                </div>
-                <div class="frame-caption">
+            <div class="image-card">
+                <div class="image-placeholder">team-01.png</div>
+                <div class="image-info">
                     <h4>Data Science Team</h4>
                     <p>Our expert analysts at work</p>
                 </div>
             </div>
-
-            <div class="image-frame" data-category="team">
-                <div class="frame-border">
-                    <div class="frame-content">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Team 2" style="background: linear-gradient(135deg, #003d73 0%, #005299 100%);">
-                    </div>
-                </div>
-                <div class="frame-caption">
+            <div class="image-card">
+                <div class="image-placeholder">team-02.png</div>
+                <div class="image-info">
                     <h4>Leadership Meeting</h4>
                     <p>Strategic planning session</p>
                 </div>
             </div>
-
-            <div class="image-frame" data-category="team">
-                <div class="frame-border">
-                    <div class="frame-content">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Team 3" style="background: linear-gradient(135deg, #00264d 0%, #003d73 100%);">
-                    </div>
-                </div>
-                <div class="frame-caption">
+            <div class="image-card">
+                <div class="image-placeholder">team-03.png</div>
+                <div class="image-info">
                     <h4>Training Workshop</h4>
                     <p>R and Python training session</p>
                 </div>
             </div>
-
-            <!-- Events Images -->
-            <div class="image-frame" data-category="events">
-                <div class="frame-border">
-                    <div class="frame-content">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Event 1" style="background: linear-gradient(135deg, #004080 0%, #0059b3 100%);">
-                    </div>
-                </div>
-                <div class="frame-caption">
+            <div class="image-card">
+                <div class="image-placeholder">event-01.png</div>
+                <div class="image-info">
                     <h4>Health Conference 2024</h4>
                     <p>National malaria control program</p>
                 </div>
             </div>
-
-            <div class="image-frame" data-category="events">
-                <div class="frame-border">
-                    <div class="frame-content">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Event 2" style="background: linear-gradient(135deg, #002952 0%, #004d99 100%);">
-                    </div>
-                </div>
-                <div class="frame-caption">
+            <div class="image-card">
+                <div class="image-placeholder">event-02.png</div>
+                <div class="image-info">
                     <h4>Data Science Summit</h4>
                     <p>West Africa analytics forum</p>
                 </div>
             </div>
-
-            <div class="image-frame" data-category="events">
-                <div class="frame-border">
-                    <div class="frame-content">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Event 3" style="background: linear-gradient(135deg, #003366 0%, #0066cc 100%);">
-                    </div>
-                </div>
-                <div class="frame-caption">
+            <div class="image-card">
+                <div class="image-placeholder">event-03.png</div>
+                <div class="image-info">
                     <h4>Project Launch</h4>
                     <p>New dashboard presentation</p>
                 </div>
             </div>
-
-            <!-- Office Images -->
-            <div class="image-frame" data-category="office">
-                <div class="frame-border">
-                    <div class="frame-content">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Office 1" style="background: linear-gradient(135deg, #004080 0%, #0073e6 100%);">
-                    </div>
-                </div>
-                <div class="frame-caption">
+            <div class="image-card">
+                <div class="image-placeholder">office-01.png</div>
+                <div class="image-info">
                     <h4>ICF Office Freetown</h4>
                     <p>Our headquarters workspace</p>
                 </div>
             </div>
-
-            <div class="image-frame" data-category="office">
-                <div class="frame-border">
-                    <div class="frame-content">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Office 2" style="background: linear-gradient(135deg, #003d73 0%, #005299 100%);">
-                    </div>
-                </div>
-                <div class="frame-caption">
+            <div class="image-card">
+                <div class="image-placeholder">office-02.png</div>
+                <div class="image-info">
                     <h4>Analysis Lab</h4>
                     <p>Data science workstation area</p>
                 </div>
             </div>
-
-            <div class="image-frame" data-category="office">
-                <div class="frame-border">
-                    <div class="frame-content">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Office 3" style="background: linear-gradient(135deg, #00264d 0%, #004080 100%);">
-                    </div>
-                </div>
-                <div class="frame-caption">
+            <div class="image-card">
+                <div class="image-placeholder">office-03.png</div>
+                <div class="image-info">
                     <h4>Conference Room</h4>
                     <p>Client meeting and presentation space</p>
                 </div>
@@ -1910,7 +1587,6 @@
                     <div class="tc-status"><div class="status-dot"></div> Live</div>
                 </div>
             </div>
-
             <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/combine-files/', 'File Combiner Tool')">
                 <div class="tc-head">
                     <h3>File Combiner</h3>
@@ -1920,7 +1596,6 @@
                     <div class="tc-status"><div class="status-dot"></div> Live</div>
                 </div>
             </div>
-
             <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/outlier/', 'Outlier Detection Tool')">
                 <div class="tc-head">
                     <h3>Outlier Detection</h3>
@@ -1930,7 +1605,6 @@
                     <div class="tc-status"><div class="status-dot"></div> Live</div>
                 </div>
             </div>
-
             <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/fuzzy-mfl-dhis2/', 'Fuzzy Name Matcher')">
                 <div class="tc-head">
                     <h3>Fuzzy Name Matcher</h3>
@@ -1940,7 +1614,6 @@
                     <div class="tc-status"><div class="status-dot"></div> Live</div>
                 </div>
             </div>
-
             <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/hf-coordinate-cleaning/', 'Coordinate Cleaner')">
                 <div class="tc-head">
                     <h3>HF Coordinate Cleaner</h3>
@@ -1950,7 +1623,6 @@
                     <div class="tc-status"><div class="status-dot"></div> Live</div>
                 </div>
             </div>
-
             <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/wide-to-long-format/', 'Format Converter')">
                 <div class="tc-head">
                     <h3>Wide-to-Long Converter</h3>
@@ -1960,7 +1632,6 @@
                     <div class="tc-status"><div class="status-dot"></div> Live</div>
                 </div>
             </div>
-
             <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/reporting-rate/', 'Reporting Rate Tool')">
                 <div class="tc-head">
                     <h3>Reporting Rate Analyser</h3>
@@ -1970,7 +1641,6 @@
                     <div class="tc-status"><div class="status-dot"></div> Live</div>
                 </div>
             </div>
-
             <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/geojson-to-shapefile/', 'GeoJSON Converter')">
                 <div class="tc-head">
                     <h3>GeoJSON / Shapefile Converter</h3>
@@ -2004,28 +1674,24 @@
                         <p>Freetown, Sierra Leone, West Africa</p>
                     </div>
                 </div>
-
                 <div class="contact-detail">
                     <div class="cd-text">
                         <h5>Phone</h5>
                         <p>+232 76 114224</p>
                     </div>
                 </div>
-
                 <div class="contact-detail">
                     <div class="cd-text">
                         <h5>Email</h5>
                         <p>info@informaticsconsultancyfirm.com</p>
                     </div>
                 </div>
-
                 <div class="contact-detail">
                     <div class="cd-text">
                         <h5>LinkedIn</h5>
                         <p>linkedin.com/in/mohamed-sillah-kanu</p>
                     </div>
                 </div>
-
                 <div class="contact-detail">
                     <div class="cd-text">
                         <h5>GitHub</h5>
@@ -2033,7 +1699,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="form-wrapper">
                 <div class="form-head">
                     <h4>Send Us a Message</h4>
@@ -2126,6 +1791,7 @@
     </div>
 </div>
 
+<!-- SCRIPT -->
 <script>
     // NAVIGATION
     function navigate(section) {
@@ -2186,16 +1852,6 @@
         });
     }
 
-    // IMAGES FILTER
-    function filterImages(cat, btn) {
-        document.querySelectorAll('.img-filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        document.querySelectorAll('.image-frame').forEach(frame => {
-            const frameCat = frame.dataset.category || '';
-            frame.style.display = (cat === 'all' || frameCat === cat) ? 'block' : 'none';
-        });
-    }
-
     // FORM
     function submitForm(btn) {
         btn.innerHTML = 'Message Sent!';
@@ -2205,7 +1861,12 @@
             btn.style.opacity = '';
         }, 3000);
     }
-</script>
 
+    // mobile nav
+    document.getElementById('mobileToggle')?.addEventListener('click', function(e){
+        e.stopPropagation();
+        document.getElementById('navInner').classList.toggle('mobile-open');
+    });
+</script>
 </body>
 </html>
