@@ -584,7 +584,7 @@
             font-weight: 400;
         }
 
-        /* IMAGES SECTION - with actual image support */
+        /* IMAGES SECTION - with image fit options */
         .images-simple-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -606,18 +606,46 @@
             border-color: var(--primary-blue);
         }
 
-        .image-placeholder {
+        .image-container {
             width: 100%;
             aspect-ratio: 4/3;
             background: linear-gradient(145deg, #e6f0ff, #b3c7e6);
             overflow: hidden;
             border-bottom: 3px solid var(--primary-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .image-placeholder img {
+        /* OPTION 1: Contain - shows entire image with possible letterboxing */
+        .image-container.contain img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: linear-gradient(145deg, #e6f0ff, #b3c7e6);
+        }
+
+        /* OPTION 2: Cover - fills container but may crop */
+        .image-container.cover img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        /* OPTION 3: Scale down - shows full image scaled to fit */
+        .image-container.scale-down img {
+            width: 100%;
+            height: 100%;
+            object-fit: scale-down;
+            background: linear-gradient(145deg, #e6f0ff, #b3c7e6);
+        }
+
+        /* Using contain by default to show full image without cropping */
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: linear-gradient(145deg, #e6f0ff, #b3c7e6);
             display: block;
         }
 
@@ -1466,7 +1494,7 @@
     </div>
 </div>
 
-<!-- IMAGES SECTION - WITH ACTUAL IMAGE SUPPORT -->
+<!-- IMAGES SECTION - WITH IMAGES THAT SHOW FULL WITHOUT CROPPING -->
 <div class="page-section" id="section-images">
     <div class="section-inner">
         <div class="section-title-bar">
@@ -1476,11 +1504,11 @@
             </div>
         </div>
         
-        <!-- Simple grid of image cards with actual images -->
+        <!-- Simple grid of image cards with images that show full without cropping -->
         <div class="images-simple-grid">
             <!-- CEO Image -->
             <div class="image-card">
-                <div class="image-placeholder">
+                <div class="image-container">
                     <img src="ceo.jpg" alt="Chief Executive Officer (CEO) - Mohamed Sillah Kanu">
                 </div>
                 <div class="image-info">
@@ -1491,7 +1519,7 @@
             
             <!-- Project Images -->
             <div class="image-card">
-                <div class="image-placeholder">
+                <div class="image-container">
                     <img src="project-01.png" alt="Data Dashboard Implementation">
                 </div>
                 <div class="image-info">
@@ -1500,7 +1528,7 @@
                 </div>
             </div>
             <div class="image-card">
-                <div class="image-placeholder">
+                <div class="image-container">
                     <img src="project-02.png" alt="GIS Mapping Project">
                 </div>
                 <div class="image-info">
@@ -1509,7 +1537,7 @@
                 </div>
             </div>
             <div class="image-card">
-                <div class="image-placeholder">
+                <div class="image-container">
                     <img src="project-03.png" alt="ML Model Development">
                 </div>
                 <div class="image-info">
@@ -1520,7 +1548,7 @@
             
             <!-- Team Images -->
             <div class="image-card">
-                <div class="image-placeholder">
+                <div class="image-container">
                     <img src="team-01.png" alt="Data Science Team">
                 </div>
                 <div class="image-info">
@@ -1529,7 +1557,7 @@
                 </div>
             </div>
             <div class="image-card">
-                <div class="image-placeholder">
+                <div class="image-container">
                     <img src="team-02.png" alt="Leadership Meeting">
                 </div>
                 <div class="image-info">
@@ -1538,7 +1566,7 @@
                 </div>
             </div>
             <div class="image-card">
-                <div class="image-placeholder">
+                <div class="image-container">
                     <img src="team-03.png" alt="Training Workshop">
                 </div>
                 <div class="image-info">
@@ -1549,7 +1577,7 @@
             
             <!-- Events Images -->
             <div class="image-card">
-                <div class="image-placeholder">
+                <div class="image-container">
                     <img src="event-01.png" alt="Health Conference 2024">
                 </div>
                 <div class="image-info">
@@ -1558,7 +1586,7 @@
                 </div>
             </div>
             <div class="image-card">
-                <div class="image-placeholder">
+                <div class="image-container">
                     <img src="event-02.png" alt="Data Science Summit">
                 </div>
                 <div class="image-info">
@@ -1567,7 +1595,7 @@
                 </div>
             </div>
             <div class="image-card">
-                <div class="image-placeholder">
+                <div class="image-container">
                     <img src="event-03.png" alt="Project Launch">
                 </div>
                 <div class="image-info">
@@ -1578,7 +1606,7 @@
             
             <!-- Office Images -->
             <div class="image-card">
-                <div class="image-placeholder">
+                <div class="image-container">
                     <img src="office-01.png" alt="ICF Office Freetown">
                 </div>
                 <div class="image-info">
@@ -1587,7 +1615,7 @@
                 </div>
             </div>
             <div class="image-card">
-                <div class="image-placeholder">
+                <div class="image-container">
                     <img src="office-02.png" alt="Analysis Lab">
                 </div>
                 <div class="image-info">
@@ -1596,7 +1624,7 @@
                 </div>
             </div>
             <div class="image-card">
-                <div class="image-placeholder">
+                <div class="image-container">
                     <img src="office-03.png" alt="Conference Room">
                 </div>
                 <div class="image-info">
@@ -1605,6 +1633,11 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Note about image display -->
+        <p style="margin-top: 2rem; text-align: center; color: var(--muted); font-style: italic;">
+            Images are displayed in full without cropping. If you see empty space around an image, it's because the image aspect ratio differs from the container.
+        </p>
     </div>
 </div>
 
