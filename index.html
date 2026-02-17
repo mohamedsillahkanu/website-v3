@@ -253,7 +253,7 @@
         }
         
         .hero-content {
-            max-width: 800px;
+            max-width: 1000px;  /* increased for better text flow */
         }
         
         .hero-content .kicker {
@@ -273,21 +273,28 @@
             color: var(--white);
             line-height: 1.1;
             letter-spacing: -1px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;  /* increased spacing */
         }
         
         .hero-content p {
-            color: rgba(255,255,255,0.9);
-            font-size: 1.25rem;
+            color: rgba(255,255,255,0.95);
+            font-size: 1.2rem;    /* slightly adjusted */
             line-height: 1.8;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.8rem;  /* consistent spacing */
             font-weight: 300;
+            text-align: justify;    /* better alignment */
+        }
+        
+        .hero-content p strong {
+            color: var(--white);
+            font-weight: 600;
         }
         
         .hero-actions {
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
+            margin-top: 2.5rem;    /* extra space before buttons */
         }
         
         .btn {
@@ -410,6 +417,7 @@
             line-height: 1.8;
             margin-bottom: 1.5rem;
             font-weight: 400;
+            text-align: justify;  /* better alignment for about text */
         }
         
         .about-list {
@@ -1085,7 +1093,8 @@
             }
             
             .hero-content p {
-                font-size: 1.05rem;
+                font-size: 1rem;
+                text-align: left; /* better on mobile */
             }
             
             .nav-inner {
@@ -1232,7 +1241,7 @@
     </div>
 </div>
 
-<!-- ABOUT SECTION - Updated with new text -->
+<!-- ABOUT SECTION -->
 <div class="page-section" id="section-about">
     <div class="section-inner">
         <div class="section-title-bar">
