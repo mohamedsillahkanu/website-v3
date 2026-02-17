@@ -4,666 +4,518 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informatics Consultancy Firm — Sierra Leone</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --navy: #003d7a;
-            --navy-deep: #002855;
-            --navy-mid: #004f9f;
-            --accent: #c8a84b;
-            --accent-light: #e8c96a;
-            --sky: #e8f2fd;
+            --primary-blue: #004080;
             --white: #ffffff;
-            --off-white: #f7f9fc;
-            --border: #d0dcea;
-            --text: #0d1b2a;
-            --muted: #5a6e84;
-            --success: #1a7a40;
-            --shadow-card: 0 4px 20px rgba(0,40,85,0.10);
-            --shadow-lift: 0 12px 40px rgba(0,40,85,0.18);
+            --off-white: #f8f9fa;
+            --border: #e2e8f0;
+            --text: #000000;
+            --muted: #666666;
+            --shadow: 0 4px 20px rgba(0, 64, 128, 0.12);
+            --shadow-lift: 0 12px 40px rgba(0, 64, 128, 0.20);
         }
 
-        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        *, *::before, *::after { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
 
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Source Serif 4', Georgia, serif;
+            font-family: 'Oswald', Arial, sans-serif;
             background: var(--off-white);
             color: var(--text);
-            font-size: 15px;
+            font-size: 16px;
             line-height: 1.7;
+            font-weight: 400;
         }
 
-        /* ══════════════════════════════════════════════ */
         /* TOP BANNER */
-        /* ══════════════════════════════════════════════ */
         .top-banner {
-            background: var(--navy-deep);
-            padding: 0.5rem 2.5rem;
+            background: var(--primary-blue);
+            padding: 0.75rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+        
         .top-banner-left {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
             align-items: center;
         }
+        
         .top-banner a {
-            color: rgba(255,255,255,0.75);
+            color: rgba(255,255,255,0.85);
             font-family: 'Oswald', sans-serif;
-            font-size: 0.78rem;
+            font-size: 0.85rem;
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 0.4rem;
-            letter-spacing: 0.5px;
+            gap: 0.5rem;
             transition: color 0.2s;
+            font-weight: 400;
         }
-        .top-banner a:hover { color: var(--accent-light); }
-        .top-banner-right {
-            display: flex;
-            gap: 1rem;
+        
+        .top-banner a:hover { 
+            color: var(--white); 
         }
-        .top-banner-right a {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.08);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgba(255,255,255,0.65);
-            font-size: 0.8rem;
-            text-decoration: none;
-            transition: all 0.25s;
-        }
-        .top-banner-right a:hover { background: var(--accent); color: var(--navy-deep); }
 
-        /* ══════════════════════════════════════════════ */
-        /* HEADER / BRAND */
-        /* ══════════════════════════════════════════════ */
+        /* HEADER */
         header {
-            background: var(--navy);
-            padding: 1.5rem 2.5rem;
+            background: var(--white);
+            padding: 1.5rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 4px solid var(--accent);
+            border-bottom: 3px solid var(--primary-blue);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
+        
         .brand {
             display: flex;
             align-items: center;
-            gap: 1.4rem;
+            gap: 1.5rem;
         }
+        
         .brand-logo {
-            width: 64px;
-            height: 64px;
-            background: var(--white);
-            border-radius: 10px;
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
+            background: var(--white);
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.25);
-            flex-shrink: 0;
         }
+        
         .brand-logo img {
             width: 100%;
             height: 100%;
             object-fit: contain;
         }
-        .brand-logo-fallback {
-            width: 100%;
-            height: 100%;
-            background: var(--navy-deep);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--accent);
-            letter-spacing: 1px;
-        }
+        
         .brand-text h1 {
             font-family: 'Oswald', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--white);
-            letter-spacing: 0.5px;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            letter-spacing: -0.5px;
             line-height: 1.2;
         }
+        
         .brand-text p {
-            font-size: 0.8rem;
-            color: var(--accent-light);
+            font-size: 0.95rem;
+            color: var(--muted);
             font-family: 'Oswald', sans-serif;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-top: 0.2rem;
-            font-style: italic;
+            margin-top: 0.25rem;
+            font-weight: 300;
         }
+
         .header-stats {
             display: flex;
             gap: 2rem;
         }
+        
         .hstat {
             text-align: center;
-            border-left: 2px solid rgba(200,168,75,0.4);
+            border-left: 2px solid var(--border);
             padding-left: 1.5rem;
         }
-        .hstat:first-child { border-left: none; padding-left: 0; }
+        
+        .hstat:first-child { 
+            border-left: none; 
+            padding-left: 0; 
+        }
+        
         .hstat-num {
             font-family: 'Oswald', sans-serif;
             font-size: 2rem;
             font-weight: 700;
-            color: var(--accent);
+            color: var(--primary-blue);
             line-height: 1;
         }
+        
         .hstat-label {
-            font-size: 0.72rem;
-            color: rgba(255,255,255,0.6);
+            font-size: 0.75rem;
+            color: var(--muted);
             font-family: 'Oswald', sans-serif;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
+            margin-top: 0.25rem;
+            font-weight: 400;
         }
 
-        /* ══════════════════════════════════════════════ */
         /* NAVIGATION */
-        /* ══════════════════════════════════════════════ */
         nav {
-            background: var(--navy-deep);
+            background: var(--primary-blue);
             position: sticky;
             top: 0;
             z-index: 500;
-            border-bottom: 2px solid var(--accent);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
+        
         .nav-inner {
             max-width: 1400px;
             margin: 0 auto;
             display: flex;
             align-items: stretch;
+            justify-content: center;
         }
+        
         .nav-tab {
             font-family: 'Oswald', sans-serif;
-            font-size: 0.82rem;
-            font-weight: 600;
-            letter-spacing: 1.2px;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.75);
-            padding: 1rem 1.6rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: rgba(255,255,255,0.85);
+            padding: 1rem 1.75rem;
             border: none;
             background: none;
             cursor: pointer;
             border-bottom: 3px solid transparent;
-            margin-bottom: -2px;
-            transition: all 0.25s ease;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             gap: 0.5rem;
             white-space: nowrap;
         }
-        .nav-tab i {
-            font-size: 0.85rem;
-            opacity: 0.7;
-        }
+        
         .nav-tab:hover {
-            color: var(--accent-light);
-            background: rgba(200,168,75,0.07);
+            color: var(--white);
+            background: rgba(255,255,255,0.1);
         }
+        
         .nav-tab.active {
-            color: var(--accent);
-            border-bottom-color: var(--accent);
-            background: rgba(200,168,75,0.1);
+            color: var(--white);
+            border-bottom-color: var(--white);
+            background: rgba(255,255,255,0.15);
         }
-        .nav-tab.active i { opacity: 1; }
+
         .mobile-nav-toggle {
             display: none;
             background: none;
             border: none;
             color: white;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             padding: 1rem;
             cursor: pointer;
-            margin-left: auto;
         }
 
-        /* ══════════════════════════════════════════════ */
         /* PAGE SECTIONS */
-        /* ══════════════════════════════════════════════ */
         .page-section {
             display: none;
             min-height: 80vh;
         }
+        
         .page-section.active {
             display: block;
-            animation: sectionIn 0.4s ease;
+            animation: fadeIn 0.4s ease;
         }
-        @keyframes sectionIn {
-            from { opacity: 0; transform: translateY(12px); }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         .section-inner {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 2.5rem;
+            padding: 3rem 2rem;
         }
 
-        /* ══════════════════════════════════════════════ */
-        /* SECTION TITLE BAR (D-MAT style) */
-        /* ══════════════════════════════════════════════ */
+        /* SECTION TITLE */
         .section-title-bar {
-            background: var(--navy);
+            background: var(--primary-blue);
             color: var(--white);
-            padding: 1.1rem 2rem;
+            padding: 1.5rem 2rem;
             display: flex;
             align-items: center;
-            gap: 1.2rem;
-            border-radius: 8px 8px 0 0;
-            border-left: 6px solid var(--accent);
-            margin-bottom: 0;
-        }
-        .sbar-icon {
-            width: 42px;
-            height: 42px;
-            background: var(--accent);
+            gap: 1.5rem;
             border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--navy-deep);
-            font-size: 1.1rem;
-            flex-shrink: 0;
+            margin-bottom: 2rem;
         }
+        
+        
         .sbar-text h2 {
             font-family: 'Oswald', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1.5rem;
             font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            letter-spacing: -0.5px;
         }
+        
         .sbar-text p {
-            font-size: 0.78rem;
-            color: rgba(255,255,255,0.6);
-            font-style: italic;
-            font-family: 'Source Serif 4', serif;
-            margin-top: 0.1rem;
-        }
-        .section-panel {
-            background: var(--white);
-            border: 3px double var(--navy);
-            border-top: none;
-            border-radius: 0 0 10px 10px;
-            padding: 2rem;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.8);
+            margin-top: 0.25rem;
+            font-weight: 300;
         }
 
-        /* ══════════════════════════════════════════════ */
-        /* HOME / ABOUT SECTION */
-        /* ══════════════════════════════════════════════ */
+        /* HOME HERO */
         .home-hero {
-            background: var(--navy);
+            background: var(--primary-blue);
             position: relative;
             overflow: hidden;
-            padding: 4rem 2.5rem;
+            padding: 5rem 2rem;
         }
+        
         .home-hero::before {
             content: '';
             position: absolute;
             inset: 0;
-            background-image:
-                linear-gradient(rgba(0,40,85,0.92), rgba(0,61,122,0.88)),
-                repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(200,168,75,0.03) 20px, rgba(200,168,75,0.03) 21px);
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 20px,
+                rgba(255,255,255,0.03) 20px,
+                rgba(255,255,255,0.03) 21px
+            );
         }
+        
         .home-hero-inner {
             max-width: 1400px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 420px;
-            gap: 3rem;
-            align-items: center;
             position: relative;
             z-index: 1;
         }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
         .hero-content .kicker {
             font-family: 'Oswald', sans-serif;
-            font-size: 0.8rem;
-            letter-spacing: 3px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
         }
-        .hero-content .kicker::before {
-            content: '';
-            display: block;
-            width: 30px;
-            height: 2px;
-            background: var(--accent);
-        }
+        
         .hero-content h1 {
             font-family: 'Oswald', sans-serif;
-            font-size: 3.2rem;
+            font-size: 3.5rem;
             font-weight: 700;
             color: var(--white);
             line-height: 1.1;
-            letter-spacing: -0.5px;
-            margin-bottom: 1.2rem;
+            letter-spacing: -1px;
+            margin-bottom: 1.5rem;
         }
-        .hero-content h1 em {
-            color: var(--accent);
-            font-style: normal;
-        }
+        
         .hero-content p {
-            color: rgba(255,255,255,0.75);
-            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+            font-size: 1.25rem;
             line-height: 1.8;
-            max-width: 580px;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             font-weight: 300;
         }
+        
         .hero-actions {
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
         }
+        
         .btn {
             font-family: 'Oswald', sans-serif;
-            font-size: 0.85rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            padding: 0.85rem 2rem;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            padding: 1rem 2rem;
             border-radius: 6px;
             border: 2px solid;
             cursor: pointer;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
-            transition: all 0.25s;
-            font-weight: 600;
+            gap: 0.75rem;
+            transition: all 0.3s;
+            font-weight: 500;
         }
-        .btn-gold {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: var(--navy-deep);
+        
+        .btn-white {
+            background: var(--white);
+            border-color: var(--white);
+            color: var(--primary-blue);
         }
-        .btn-gold:hover {
-            background: var(--accent-light);
-            border-color: var(--accent-light);
+        
+        .btn-white:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(200,168,75,0.35);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
+        
         .btn-outline {
             background: transparent;
-            border-color: rgba(255,255,255,0.4);
+            border-color: rgba(255,255,255,0.5);
             color: var(--white);
         }
+        
         .btn-outline:hover {
             border-color: var(--white);
-            background: rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.1);
         }
-        .btn-navy {
-            background: var(--navy);
-            border-color: var(--navy);
+
+        .btn-blue {
+            background: var(--primary-blue);
+            border-color: var(--primary-blue);
             color: var(--white);
         }
-        .btn-navy:hover {
-            background: var(--navy-mid);
-            border-color: var(--navy-mid);
+        
+        .btn-blue:hover {
+            background: var(--secondary-blue);
+            border-color: var(--secondary-blue);
             transform: translateY(-2px);
-            box-shadow: var(--shadow-card);
+            box-shadow: var(--shadow);
         }
 
-        /* Hero Dashboard Card */
-        .hero-dashboard {
-            background: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-        .dash-header {
-            background: var(--navy-deep);
-            padding: 0.8rem 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .dash-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--accent);
-            opacity: 0.6;
-        }
-        .dash-dot:first-child { opacity: 1; }
-        .dash-title {
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.75rem;
-            color: rgba(255,255,255,0.6);
-            letter-spacing: 1px;
-            margin-left: 0.5rem;
-        }
-        .dash-body {
-            padding: 1.5rem;
-            background: var(--off-white);
-        }
-        .dash-chart {
-            display: flex;
-            align-items: flex-end;
-            gap: 8px;
-            height: 100px;
-            margin-bottom: 1.2rem;
-        }
-        .dash-bar {
-            flex: 1;
-            background: var(--navy);
-            border-radius: 4px 4px 0 0;
-            animation: barUp 0.8s ease backwards;
-            position: relative;
-        }
-        @keyframes barUp {
-            from { transform: scaleY(0); transform-origin: bottom; }
-            to { transform: scaleY(1); }
-        }
-        .dash-bar:nth-child(1){height:45%;animation-delay:.1s}
-        .dash-bar:nth-child(2){height:70%;animation-delay:.2s;background:var(--accent)}
-        .dash-bar:nth-child(3){height:55%;animation-delay:.3s}
-        .dash-bar:nth-child(4){height:90%;animation-delay:.4s;background:var(--accent)}
-        .dash-bar:nth-child(5){height:65%;animation-delay:.5s}
-        .dash-bar:nth-child(6){height:78%;animation-delay:.6s}
-        .dash-bar:nth-child(7){height:50%;animation-delay:.7s;background:var(--accent)}
-        .dash-metrics {
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-            gap: 0.8rem;
-        }
-        .dash-metric {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 0.8rem;
-            border-left: 4px solid var(--navy);
-        }
-        .dash-metric:nth-child(even) { border-left-color: var(--accent); }
-        .dash-metric-val {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--navy);
-        }
-        .dash-metric:nth-child(even) .dash-metric-val { color: var(--accent); }
-        .dash-metric-lbl {
-            font-size: 0.7rem;
-            color: var(--muted);
-            font-family: 'Oswald', sans-serif;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        /* ══════════════════════════════════════════════ */
-        /* ABOUT CARDS STRIP */
-        /* ══════════════════════════════════════════════ */
+        /* ABOUT CARDS */
         .about-strip {
             background: var(--white);
-            border-top: 3px solid var(--accent);
-            padding: 2rem 2.5rem;
+            border-top: 3px solid var(--primary-blue);
+            padding: 3rem 2rem;
         }
+        
         .about-strip-inner {
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(4,1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
         }
+        
         .about-card {
             border: 2px solid var(--border);
             border-radius: 8px;
-            padding: 1.5rem;
-            transition: all 0.25s;
-            border-top: 4px solid var(--navy);
+            padding: 2rem;
+            transition: all 0.3s;
+            background: var(--white);
+            cursor: pointer;
         }
-        .about-card:nth-child(2) { border-top-color: var(--accent); }
-        .about-card:nth-child(3) { border-top-color: var(--navy-mid); }
-        .about-card:nth-child(4) { border-top-color: var(--success); }
+        
         .about-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-5px);
             box-shadow: var(--shadow-lift);
+            border-color: var(--primary-blue);
         }
-        .about-card-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--sky);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--navy);
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
+        
         .about-card h3 {
             font-family: 'Oswald', sans-serif;
-            font-size: 1rem;
+            font-size: 1.25rem;
             font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.3px;
+            color: var(--primary-blue);
+            margin-bottom: 0.75rem;
         }
+        
         .about-card p {
-            font-size: 0.85rem;
+            font-size: 1rem;
             color: var(--muted);
             line-height: 1.6;
+            font-weight: 400;
         }
 
-        /* ══════════════════════════════════════════════ */
-        /* ABOUT MAIN CONTENT */
-        /* ══════════════════════════════════════════════ */
+        /* ABOUT CONTENT */
         .about-grid {
             display: grid;
-            grid-template-columns: 1fr 1.1fr;
-            gap: 2rem;
-            margin-top: 1.5rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
         }
+        
         .about-text h3 {
             font-family: 'Oswald', sans-serif;
-            font-size: 1.4rem;
-            color: var(--navy);
-            margin-bottom: 1rem;
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 0.5rem;
+            font-size: 1.75rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--primary-blue);
+            padding-bottom: 0.75rem;
             display: inline-block;
         }
+        
         .about-text p {
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             color: var(--text);
-            line-height: 1.85;
-            margin-bottom: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
         }
+        
         .about-list {
             list-style: none;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
+        
         .about-list li {
             display: flex;
             align-items: flex-start;
-            gap: 0.8rem;
-            padding: 0.6rem 0;
+            gap: 1rem;
+            padding: 1rem 0;
             border-bottom: 1px solid var(--border);
-            font-size: 0.9rem;
+            font-size: 1.05rem;
             color: var(--text);
         }
-        .about-list li i {
-            color: var(--navy);
-            margin-top: 3px;
-            flex-shrink: 0;
-        }
+        
         .about-info-card {
-            background: var(--navy);
+            background: var(--primary-blue);
             border-radius: 10px;
             overflow: hidden;
+            box-shadow: var(--shadow);
         }
+        
         .info-card-header {
-            background: var(--navy-deep);
-            padding: 1.2rem 1.5rem;
-            border-bottom: 3px solid var(--accent);
+            background: var(--dark-blue);
+            padding: 1.5rem 2rem;
+            border-bottom: 3px solid var(--white);
         }
+        
         .info-card-header h4 {
             font-family: 'Oswald', sans-serif;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--accent);
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            color: var(--white);
+            font-weight: 600;
         }
+        
         .info-card-body {
-            padding: 1.5rem;
+            padding: 2rem;
         }
+        
         .info-row {
             display: flex;
             align-items: flex-start;
-            gap: 1rem;
-            padding: 0.9rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
+        
         .info-row:last-child { border-bottom: none; }
-        .info-row-icon {
-            width: 36px;
-            height: 36px;
-            background: rgba(200,168,75,0.15);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent);
-            font-size: 0.9rem;
-            flex-shrink: 0;
-        }
+        
         .info-row-text h5 {
             font-family: 'Oswald', sans-serif;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-            color: rgba(255,255,255,0.5);
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            color: rgba(255,255,255,0.6);
             text-transform: uppercase;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.25rem;
+            font-weight: 600;
         }
+        
         .info-row-text p {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: var(--white);
             font-weight: 300;
         }
 
-        /* ══════════════════════════════════════════════ */
         /* SERVICES */
-        /* ══════════════════════════════════════════════ */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(3,1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
         }
+        
         .service-card {
             background: var(--white);
             border: 2px solid var(--border);
@@ -672,652 +524,577 @@
             transition: all 0.3s;
             cursor: pointer;
         }
+        
         .service-card:hover {
-            border-color: var(--navy);
+            border-color: var(--primary-blue);
             transform: translateY(-5px);
             box-shadow: var(--shadow-lift);
         }
+        
         .sc-head {
-            background: var(--navy);
-            padding: 1.4rem 1.5rem;
+            background: var(--primary-blue);
+            padding: 2rem 1.5rem;
             position: relative;
         }
-        .sc-num {
-            position: absolute;
-            top: 0.8rem;
-            right: 1rem;
-            font-family: 'Oswald', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: rgba(255,255,255,0.06);
-            line-height: 1;
-        }
-        .sc-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--accent);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--navy-deep);
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-        }
+        
         .sc-head h3 {
             font-family: 'Oswald', sans-serif;
-            font-size: 0.95rem;
-            letter-spacing: 0.8px;
+            font-size: 1.1rem;
             color: var(--white);
-            text-transform: uppercase;
+            font-weight: 600;
         }
+        
         .sc-body {
-            padding: 1.2rem 1.5rem 1.5rem;
+            padding: 1.5rem;
         }
+        
         .sc-body p {
-            font-size: 0.88rem;
+            font-size: 1rem;
             color: var(--muted);
             line-height: 1.7;
             margin-bottom: 1rem;
+            font-weight: 400;
         }
+        
         .sc-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.4rem;
+            gap: 0.5rem;
         }
+        
         .tag {
             font-family: 'Oswald', sans-serif;
-            font-size: 0.68rem;
-            letter-spacing: 0.8px;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
-            padding: 0.25rem 0.7rem;
-            border-radius: 3px;
-            background: var(--sky);
-            color: var(--navy);
+            padding: 0.35rem 0.85rem;
+            border-radius: 4px;
+            background: var(--off-white);
+            color: var(--primary-blue);
             border: 1px solid var(--border);
+            font-weight: 500;
         }
 
-        /* ══════════════════════════════════════════════ */
-        /* GALLERY */
-        /* ══════════════════════════════════════════════ */
+        /* GALLERY GRID */
         .gallery-intro {
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             color: var(--muted);
-            margin-bottom: 1.8rem;
-            border-left: 4px solid var(--accent);
-            padding-left: 1rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary-blue);
+            padding-left: 1.5rem;
+            font-weight: 400;
         }
+
         .gallery-filter {
             display: flex;
-            gap: 0.6rem;
+            gap: 0.75rem;
             flex-wrap: wrap;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
+        
         .gfilter-btn {
             font-family: 'Oswald', sans-serif;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            padding: 0.5rem 1.2rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            padding: 0.65rem 1.5rem;
             border: 2px solid var(--border);
-            border-radius: 4px;
+            border-radius: 6px;
             background: var(--white);
             color: var(--muted);
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.3s;
+            font-weight: 500;
         }
-        .gfilter-btn:hover, .gfilter-btn.active {
-            border-color: var(--navy);
-            background: var(--navy);
+        
+        .gfilter-btn:hover,
+        .gfilter-btn.active {
+            border-color: var(--primary-blue);
+            background: var(--primary-blue);
             color: var(--white);
         }
+
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
-        .gallery-frame {
-            position: relative;
+
+        .gallery-item {
             background: var(--white);
-            border: 3px solid var(--navy);
-            border-radius: 4px;
-            padding: 12px;
-            box-shadow: 8px 8px 0 var(--accent);
+            border: 3px solid var(--primary-blue);
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: var(--shadow);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lift);
+            border-color: var(--primary-blue);
+            border-width: 4px;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-image img {
+            transform: scale(1.05);
+        }
+
+        .gallery-content {
+            padding: 1.5rem;
+        }
+
+        .gallery-category {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--primary-blue);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .gallery-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .gallery-description {
+            font-size: 0.95rem;
+            color: var(--muted);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        /* IMAGES SECTION */
+        .images-filter {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+        
+        .img-filter-btn {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            padding: 0.65rem 1.5rem;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            background: var(--white);
+            color: var(--muted);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .img-filter-btn:hover,
+        .img-filter-btn.active {
+            border-color: var(--primary-blue);
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .image-frame {
             cursor: pointer;
             transition: all 0.3s;
         }
-        .gallery-frame:hover {
-            transform: translate(-4px, -4px);
-            box-shadow: 12px 12px 0 var(--accent);
+
+        .image-frame:hover {
+            transform: translateY(-5px);
         }
-        .gallery-frame::before {
+
+        .frame-border {
+            padding: 15px;
+            background: var(--white);
+            border: 4px solid var(--primary-blue);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .image-frame:hover .frame-border {
+            box-shadow: var(--shadow-lift);
+            border-width: 5px;
+        }
+
+        .frame-border::before {
             content: '';
             position: absolute;
-            inset: 5px;
-            border: 1px solid rgba(0,61,122,0.15);
-            border-radius: 2px;
+            inset: 8px;
+            border: 1px solid rgba(0, 64, 128, 0.2);
+            border-radius: 4px;
             pointer-events: none;
         }
-        .frame-thumb {
+
+        .frame-content {
             width: 100%;
-            aspect-ratio: 16/10;
-            background: var(--navy);
-            border-radius: 2px;
+            aspect-ratio: 4/3;
             overflow: hidden;
-            position: relative;
+            border-radius: 4px;
+            background: var(--off-white);
         }
-        .frame-thumb-inner {
+
+        .frame-content img {
             width: 100%;
             height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--navy-deep), var(--navy-mid));
-            padding: 1rem;
-        }
-        .frame-thumb-inner i {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 0.8rem;
-        }
-        .frame-thumb-inner span {
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.75);
-            letter-spacing: 1px;
-            text-align: center;
-        }
-        .frame-view-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0,40,85,0.85);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s;
-            border-radius: 2px;
-        }
-        .gallery-frame:hover .frame-view-overlay {
-            opacity: 1;
-        }
-        .frame-view-btn {
-            background: var(--accent);
-            color: var(--navy-deep);
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.78rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            padding: 0.7rem 1.5rem;
-            border-radius: 4px;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 700;
-        }
-        .frame-caption {
-            padding: 0.8rem 0.3rem 0.3rem;
-        }
-        .frame-cat {
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.68rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--accent);
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            margin-bottom: 0.3rem;
-        }
-        .frame-cat::before {
-            content: '';
+            object-fit: cover;
             display: block;
-            width: 15px;
-            height: 1px;
-            background: var(--accent);
-        }
-        .frame-title {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--navy);
-        }
-        .frame-desc {
-            font-size: 0.8rem;
-            color: var(--muted);
-            margin-top: 0.3rem;
-            line-height: 1.5;
+            transition: transform 0.3s;
         }
 
-        /* ══════════════════════════════════════════════ */
-        /* PROJECT SHELF */
-        /* ══════════════════════════════════════════════ */
-        .shelf {
-            background: linear-gradient(180deg, #f0f4fa 0%, var(--off-white) 100%);
-            border-top: 4px solid var(--navy);
-            border-bottom: 4px solid var(--navy);
-            padding: 2rem 2.5rem;
-            margin-bottom: 1.5rem;
-            position: relative;
+        .image-frame:hover .frame-content img {
+            transform: scale(1.05);
         }
-        .shelf::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 8px;
-            background: linear-gradient(180deg, rgba(0,40,85,0.1), transparent);
+
+        .frame-caption {
+            padding: 1rem 0.5rem 0;
         }
-        .shelf-label {
+
+        .frame-caption h4 {
             font-family: 'Oswald', sans-serif;
-            font-size: 0.72rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-        .shelf-label::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: var(--border);
-        }
-        .shelf-row {
-            display: flex;
-            gap: 1.2rem;
-            overflow-x: auto;
-            padding-bottom: 0.5rem;
-        }
-        .shelf-row::-webkit-scrollbar { height: 4px; }
-        .shelf-row::-webkit-scrollbar-track { background: var(--border); border-radius: 2px; }
-        .shelf-row::-webkit-scrollbar-thumb { background: var(--navy); border-radius: 2px; }
-        .shelf-item {
-            flex-shrink: 0;
-            width: 220px;
-            background: var(--white);
-            border: 2px solid var(--border);
-            border-radius: 6px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.25s;
-            border-top: 5px solid var(--navy);
-        }
-        .shelf-item:nth-child(2n) { border-top-color: var(--accent); }
-        .shelf-item:nth-child(3n) { border-top-color: var(--navy-mid); }
-        .shelf-item:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 30px rgba(0,40,85,0.18);
-        }
-        .shelf-item-body {
-            padding: 1rem;
-        }
-        .shelf-item-icon {
-            width: 44px;
-            height: 44px;
-            background: var(--sky);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--navy);
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-        }
-        .shelf-item h4 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.88rem;
+            font-size: 1.05rem;
             font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 0.4rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.35rem;
             line-height: 1.3;
-            letter-spacing: 0.3px;
-        }
-        .shelf-item p {
-            font-size: 0.75rem;
-            color: var(--muted);
-            line-height: 1.5;
-        }
-        .shelf-item-foot {
-            background: var(--sky);
-            padding: 0.6rem 1rem;
-            border-top: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .shelf-item-foot span {
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.65rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--navy);
-        }
-        .shelf-item-foot i {
-            color: var(--accent);
-            font-size: 0.85rem;
         }
 
-        /* ══════════════════════════════════════════════ */
-        /* TOOLS SECTION */
-        /* ══════════════════════════════════════════════ */
+        .frame-caption p {
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        /* TOOLS */
         .tools-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1.2rem;
+            gap: 1.5rem;
         }
+        
         .tool-card {
             background: var(--white);
             border: 2px solid var(--border);
             border-radius: 8px;
             overflow: hidden;
             cursor: pointer;
-            transition: all 0.25s;
+            transition: all 0.3s;
         }
+        
         .tool-card:hover {
-            border-color: var(--navy);
+            border-color: var(--primary-blue);
             transform: translateY(-4px);
             box-shadow: var(--shadow-lift);
         }
+        
         .tc-head {
-            background: var(--navy-deep);
-            padding: 1.2rem 1rem;
-            position: relative;
+            background: var(--primary-blue);
+            padding: 1.5rem 1rem;
         }
-        .tc-num {
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            color: rgba(200,168,75,0.5);
-            text-transform: uppercase;
-            margin-bottom: 0.6rem;
-        }
-        .tc-icon {
-            width: 44px;
-            height: 44px;
-            background: rgba(200,168,75,0.15);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent);
-            font-size: 1.2rem;
-            margin-bottom: 0.6rem;
-        }
+        
         .tc-head h3 {
             font-family: 'Oswald', sans-serif;
-            font-size: 0.82rem;
-            letter-spacing: 0.5px;
+            font-size: 0.95rem;
             color: var(--white);
-            text-transform: uppercase;
+            font-weight: 600;
         }
+        
         .tc-body {
-            padding: 1rem;
+            padding: 1.25rem;
         }
+        
         .tc-body p {
-            font-size: 0.78rem;
+            font-size: 0.9rem;
             color: var(--muted);
             line-height: 1.6;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
         }
+        
         .tc-status {
             display: flex;
             align-items: center;
             gap: 0.5rem;
             font-family: 'Oswald', sans-serif;
-            font-size: 0.65rem;
-            letter-spacing: 1px;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
+            color: #10b981;
+            font-weight: 500;
         }
+        
         .status-dot {
-            width: 7px;
-            height: 7px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
-            background: var(--success);
+            background: #10b981;
         }
-        .status-dot.amber { background: #e59c14; }
-        .tc-status { color: var(--success); }
-        .tc-status.amber { color: #c07a00; }
 
-        /* ══════════════════════════════════════════════ */
         /* CONTACT */
-        /* ══════════════════════════════════════════════ */
         .contact-layout {
             display: grid;
             grid-template-columns: 1fr 1.5fr;
-            gap: 2rem;
+            gap: 3rem;
         }
-        .contact-info-block { }
+        
         .contact-info-block h3 {
             font-family: 'Oswald', sans-serif;
-            font-size: 1.2rem;
-            color: var(--navy);
-            margin-bottom: 0.5rem;
-            border-bottom: 2px solid var(--accent);
+            font-size: 1.75rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            border-bottom: 3px solid var(--primary-blue);
             display: inline-block;
-            padding-bottom: 0.3rem;
+            padding-bottom: 0.5rem;
         }
+        
         .contact-info-block > p {
             color: var(--muted);
-            font-size: 0.9rem;
+            font-size: 1.05rem;
             line-height: 1.8;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
         }
+        
         .contact-detail {
             display: flex;
             align-items: flex-start;
-            gap: 1rem;
-            padding: 1rem;
+            padding: 1.25rem;
             background: var(--white);
             border: 2px solid var(--border);
-            border-left: 5px solid var(--navy);
-            border-radius: 0 6px 6px 0;
-            margin-bottom: 0.8rem;
-            transition: all 0.25s;
+            border-left: 5px solid var(--primary-blue);
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 1rem;
+            transition: all 0.3s;
         }
+        
         .contact-detail:hover {
-            border-left-color: var(--accent);
-            transform: translateX(4px);
+            transform: translateX(5px);
+            box-shadow: var(--shadow);
         }
-        .cd-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--sky);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--navy);
-            font-size: 1rem;
-            flex-shrink: 0;
-        }
+        
         .cd-text h5 {
             font-family: 'Oswald', sans-serif;
-            font-size: 0.7rem;
-            letter-spacing: 1.5px;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
             color: var(--muted);
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.35rem;
+            font-weight: 600;
         }
+        
         .cd-text p {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: var(--text);
             font-weight: 400;
         }
+
         .form-wrapper {
             background: var(--white);
-            border: 3px double var(--navy);
-            border-radius: 8px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
             overflow: hidden;
+            box-shadow: var(--shadow);
         }
+        
         .form-head {
-            background: var(--navy);
-            padding: 1rem 1.5rem;
+            background: var(--primary-blue);
+            padding: 1.5rem 2rem;
             display: flex;
             align-items: center;
-            gap: 0.8rem;
+            gap: 1rem;
         }
+        
         .form-head h4 {
             font-family: 'Oswald', sans-serif;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--accent);
+            font-size: 1.25rem;
+            color: var(--white);
+            font-weight: 600;
         }
+        
         .form-body {
-            padding: 1.5rem;
+            padding: 2rem;
         }
+        
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+            gap: 1.25rem;
         }
+        
         .form-group {
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
         }
+        
         .form-group label {
             display: block;
             font-family: 'Oswald', sans-serif;
-            font-size: 0.72rem;
-            letter-spacing: 1.5px;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
-            color: var(--navy);
-            margin-bottom: 0.4rem;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
         }
+        
         .form-group input,
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 0.75rem 1rem;
+            padding: 0.9rem 1.25rem;
             border: 2px solid var(--border);
-            border-radius: 4px;
-            font-family: 'Source Serif 4', serif;
-            font-size: 0.88rem;
+            border-radius: 6px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
             color: var(--text);
             background: var(--off-white);
-            transition: all 0.2s;
+            transition: all 0.3s;
+            font-weight: 400;
         }
+        
         .form-group input:focus,
         .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
-            border-color: var(--navy);
+            border-color: var(--primary-blue);
             background: var(--white);
-            box-shadow: 0 0 0 3px rgba(0,61,122,0.08);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
         }
-        .form-group textarea { resize: vertical; min-height: 110px; }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
 
-        /* ══════════════════════════════════════════════ */
         /* MODAL */
-        /* ══════════════════════════════════════════════ */
         .modal-overlay {
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0,20,50,0.85);
+            background: rgba(0, 0, 0, 0.85);
             z-index: 900;
             align-items: center;
             justify-content: center;
         }
+        
         .modal-overlay.open {
             display: flex;
             animation: modalFadeIn 0.3s ease;
         }
-        @keyframes modalFadeIn { from { opacity: 0; } to { opacity: 1; } }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
         .modal-box {
             background: var(--white);
             width: 95vw;
             height: 95vh;
             max-width: 1400px;
-            border-radius: 8px;
+            border-radius: 10px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             box-shadow: 0 30px 80px rgba(0,0,0,0.5);
-            border: 3px solid var(--accent);
+            border: 3px solid var(--primary-blue);
             animation: modalSlideIn 0.35s ease;
         }
+        
         @keyframes modalSlideIn {
             from { transform: scale(0.96) translateY(-20px); opacity: 0; }
             to { transform: scale(1) translateY(0); opacity: 1; }
         }
+        
         .modal-head {
-            background: var(--navy-deep);
-            padding: 0.9rem 1.5rem;
+            background: var(--primary-blue);
+            padding: 1rem 1.5rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 3px solid var(--accent);
+            border-bottom: 3px solid var(--white);
             flex-shrink: 0;
         }
-        .modal-head-left {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-        .modal-badge {
-            background: var(--accent);
-            color: var(--navy-deep);
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.65rem;
-            letter-spacing: 1.5px;
-            padding: 0.3rem 0.8rem;
-            border-radius: 3px;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
+        
         .modal-head-title {
             font-family: 'Oswald', sans-serif;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 600;
             color: var(--white);
-            letter-spacing: 0.5px;
         }
+        
         .modal-head-actions {
             display: flex;
-            gap: 0.5rem;
+            gap: 0.75rem;
             align-items: center;
         }
+        
         .modal-action-btn {
             font-family: 'Oswald', sans-serif;
-            font-size: 0.72rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            padding: 0.5rem 1.1rem;
-            border-radius: 4px;
+            font-size: 0.85rem;
+            padding: 0.6rem 1.25rem;
+            border-radius: 6px;
             border: none;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 0.4rem;
-            transition: all 0.2s;
+            gap: 0.5rem;
+            transition: all 0.3s;
             text-decoration: none;
+            font-weight: 500;
         }
+        
         .btn-open-tab {
-            background: rgba(200,168,75,0.15);
-            color: var(--accent-light);
-            border: 1px solid rgba(200,168,75,0.3);
+            background: var(--white);
+            color: var(--primary-blue);
         }
-        .btn-open-tab:hover { background: rgba(200,168,75,0.25); }
+        
+        .btn-open-tab:hover {
+            background: var(--off-white);
+        }
+        
         .btn-close-modal {
             background: rgba(255,255,255,0.1);
             color: var(--white);
-            border: 1px solid rgba(255,255,255,0.15);
-            font-size: 1rem;
-            padding: 0.5rem 0.8rem;
+            font-size: 1.1rem;
+            padding: 0.6rem 1rem;
         }
-        .btn-close-modal:hover { background: rgba(255,100,100,0.2); }
+        
+        .btn-close-modal:hover {
+            background: rgba(255,100,100,0.3);
+        }
+        
         .modal-iframe {
             flex: 1;
             border: none;
             width: 100%;
         }
+        
         .modal-loading {
             display: flex;
             flex-direction: column;
@@ -1326,124 +1103,180 @@
             height: 100%;
             gap: 1.5rem;
         }
+        
         .spin {
             width: 50px;
             height: 50px;
             border: 4px solid var(--border);
-            border-top-color: var(--navy);
+            border-top-color: var(--primary-blue);
             border-radius: 50%;
             animation: spin 0.8s linear infinite;
         }
-        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
 
-        /* ══════════════════════════════════════════════ */
         /* FOOTER */
-        /* ══════════════════════════════════════════════ */
         footer {
-            background: var(--navy-deep);
-            border-top: 4px solid var(--accent);
-            padding: 2.5rem;
+            background: var(--primary-blue);
+            border-top: 3px solid var(--white);
+            padding: 1rem 2rem;
         }
-        .footer-inner {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 2.5rem;
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .footer-brand h3 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.1rem;
-            color: var(--white);
-            margin-bottom: 0.8rem;
-            letter-spacing: 0.5px;
-        }
-        .footer-brand p {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.5);
-            line-height: 1.8;
-            font-weight: 300;
-        }
-        .footer-col h4 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.78rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-        .footer-col ul { list-style: none; }
-        .footer-col li { margin-bottom: 0.6rem; }
-        .footer-col a {
-            color: rgba(255,255,255,0.55);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: color 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .footer-col a:hover { color: var(--accent-light); }
-        .footer-col a i { font-size: 0.75rem; opacity: 0.5; }
-        .footer-bottom {
+        
+        .footer-content {
             max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 2rem;
         }
-        .footer-bottom p {
-            font-size: 0.78rem;
-            color: rgba(255,255,255,0.35);
+        
+        .footer-left p,
+        .footer-right p {
             font-family: 'Oswald', sans-serif;
-            letter-spacing: 0.5px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+            font-weight: 400;
+            margin: 0;
         }
-        .footer-bottom-badge {
-            background: rgba(200,168,75,0.1);
-            border: 1px solid rgba(200,168,75,0.2);
-            color: rgba(200,168,75,0.7);
+        
+        .footer-center {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .footer-center a {
             font-family: 'Oswald', sans-serif;
-            font-size: 0.68rem;
-            letter-spacing: 1.5px;
-            padding: 0.4rem 0.9rem;
-            border-radius: 3px;
-            text-transform: uppercase;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 400;
+        }
+        
+        .footer-center a:hover {
+            color: var(--white);
+        }
+        
+        .footer-divider {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.85rem;
         }
 
-        /* ══════════════════════════════════════════════ */
         /* RESPONSIVE */
-        /* ══════════════════════════════════════════════ */
         @media (max-width: 1100px) {
             .services-grid { grid-template-columns: repeat(2, 1fr); }
             .tools-grid { grid-template-columns: repeat(2, 1fr); }
-            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
             .about-strip-inner { grid-template-columns: repeat(2, 1fr); }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .images-grid { grid-template-columns: repeat(2, 1fr); }
         }
+
         @media (max-width: 900px) {
-            .home-hero-inner { grid-template-columns: 1fr; }
-            .hero-dashboard { display: none; }
             .about-grid { grid-template-columns: 1fr; }
             .contact-layout { grid-template-columns: 1fr; }
             .header-stats { display: none; }
-            .footer-inner { grid-template-columns: 1fr; }
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
         }
+
         @media (max-width: 768px) {
-            .top-banner { display: none; }
-            header { flex-direction: column; gap: 1rem; align-items: flex-start; padding: 1.2rem 1.5rem; }
-            .section-inner { padding: 1.5rem; }
-            .services-grid, .tools-grid { grid-template-columns: 1fr; }
-            .gallery-grid { grid-template-columns: 1fr; }
-            .form-row { grid-template-columns: 1fr; }
-            .about-strip-inner { grid-template-columns: 1fr; }
-            .hero-content h1 { font-size: 2rem; }
-            .nav-tab { padding: 0.8rem 0.9rem; font-size: 0.7rem; }
-            .mobile-nav-toggle { display: flex; }
-            .nav-inner { flex-wrap: wrap; }
-            .nav-inner.collapsed .nav-tab { display: none; }
-            .nav-inner.collapsed .mobile-nav-toggle { display: flex; }
+            .top-banner {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            
+            .top-banner-left {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+                padding: 1.25rem;
+            }
+            
+            .brand {
+                width: 100%;
+            }
+            
+            .brand-logo {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .brand-text h1 {
+                font-size: 1.25rem;
+            }
+            
+            .brand-text p {
+                font-size: 0.85rem;
+            }
+            
+            .section-inner {
+                padding: 2rem 1.25rem;
+            }
+            
+            .services-grid,
+            .tools-grid,
+            .gallery-grid,
+            .images-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-strip-inner {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.05rem;
+            }
+            
+            .nav-inner {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+            }
+            
+            .nav-tab {
+                padding: 0.85rem 1.25rem;
+                font-size: 0.85rem;
+                flex: 1 1 auto;
+            }
+            
+            .mobile-nav-toggle {
+                display: flex;
+                margin-left: auto;
+            }
+            
+            .nav-inner.collapsed .nav-tab:not(.active) {
+                display: none;
+            }
+            
+            .footer-center {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .footer-divider {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -1453,19 +1286,14 @@
 <div class="top-banner">
     <div class="top-banner-left">
         <a href="mailto:info@informaticsconsultancyfirm.com">
-            <i class="fa-solid fa-envelope"></i> info@informaticsconsultancyfirm.com
+            info@informaticsconsultancyfirm.com
         </a>
         <a href="tel:+23276114224">
-            <i class="fa-solid fa-phone"></i> +232 76 114224
+            +232 76 114224
         </a>
         <a href="#" onclick="navigate('contact');return false;">
-            <i class="fa-solid fa-location-dot"></i> Freetown, Sierra Leone
+            Freetown, Sierra Leone
         </a>
-    </div>
-    <div class="top-banner-right">
-        <a href="https://www.linkedin.com/in/mohamed-sillah-kanu" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://github.com/mohamedsillahkanu" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="mailto:info@informaticsconsultancyfirm.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
     </div>
 </div>
 
@@ -1473,11 +1301,11 @@
 <header>
     <div class="brand">
         <div class="brand-logo">
-            <img src="ICF-SL.jpg" alt="ICF" onerror="this.parentElement.innerHTML='<div class=\'brand-logo-fallback\'>ICF</div>'">
+            <img src="ICF-SL.jpg" alt="ICF Logo">
         </div>
         <div class="brand-text">
             <h1>Informatics Consultancy Firm</h1>
-            <p>Data-Driven Solutions for Health and Development &mdash; Sierra Leone</p>
+            <p>Data-Driven Solutions for Health and Development — Sierra Leone</p>
         </div>
     </div>
     <div class="header-stats">
@@ -1504,88 +1332,49 @@
 <nav>
     <div class="nav-inner" id="navInner">
         <button class="nav-tab active" onclick="navigate('home')" data-section="home">
-            <i class="fa-solid fa-house"></i> Home
+            Home
         </button>
         <button class="nav-tab" onclick="navigate('about')" data-section="about">
-            <i class="fa-solid fa-building-columns"></i> About ICF
+            About ICF
         </button>
         <button class="nav-tab" onclick="navigate('services')" data-section="services">
-            <i class="fa-solid fa-gears"></i> Services
+            Services
         </button>
         <button class="nav-tab" onclick="navigate('gallery')" data-section="gallery">
-            <i class="fa-solid fa-images"></i> Project Gallery
+            Project Gallery
         </button>
-        <button class="nav-tab" onclick="navigate('projects')" data-section="projects">
-            <i class="fa-solid fa-layer-group"></i> Data Science Projects
+        <button class="nav-tab" onclick="navigate('images')" data-section="images">
+            Images
         </button>
         <button class="nav-tab" onclick="navigate('tools')" data-section="tools">
-            <i class="fa-solid fa-screwdriver-wrench"></i> Software Tools
+            Software Tools
         </button>
         <button class="nav-tab" onclick="navigate('contact')" data-section="contact">
-            <i class="fa-solid fa-paper-plane"></i> Contact
+            Contact
         </button>
         <button class="mobile-nav-toggle" id="mobileToggle" onclick="toggleMobileNav()">
-            <i class="fa-solid fa-bars"></i>
+            ☰
         </button>
     </div>
 </nav>
 
-<!-- ═════════════════════════════════════════════════ -->
 <!-- HOME SECTION -->
-<!-- ═════════════════════════════════════════════════ -->
 <div class="page-section active" id="section-home">
     <div class="home-hero">
         <div class="home-hero-inner">
             <div class="hero-content">
                 <div class="kicker">
-                    <i class="fa-solid fa-circle-dot"></i> Sierra Leone &mdash; West Africa
+                    Sierra Leone — West Africa
                 </div>
-                <h1>Transforming Data into <em>Strategic Intelligence</em></h1>
+                <h1>Transforming Data into Strategic Intelligence</h1>
                 <p>Informatics Consultancy Firm is Sierra Leone's foremost data science and analytics consultancy, delivering evidence-based solutions through advanced statistical modeling, machine learning, and geospatial analysis.</p>
                 <div class="hero-actions">
-                    <button class="btn btn-gold" onclick="navigate('projects')">
-                        <i class="fa-solid fa-chart-line"></i> View Our Projects
+                    <button class="btn btn-white" onclick="navigate('gallery')">
+                        View Our Projects
                     </button>
                     <button class="btn btn-outline" onclick="navigate('tools')">
-                        <i class="fa-solid fa-screwdriver-wrench"></i> Explore Tools
+                        Explore Tools
                     </button>
-                </div>
-            </div>
-            <div class="hero-dashboard">
-                <div class="dash-header">
-                    <div class="dash-dot"></div>
-                    <div class="dash-dot"></div>
-                    <div class="dash-dot"></div>
-                    <div class="dash-title">ICF Analytics Dashboard</div>
-                </div>
-                <div class="dash-body">
-                    <div class="dash-chart">
-                        <div class="dash-bar"></div>
-                        <div class="dash-bar"></div>
-                        <div class="dash-bar"></div>
-                        <div class="dash-bar"></div>
-                        <div class="dash-bar"></div>
-                        <div class="dash-bar"></div>
-                        <div class="dash-bar"></div>
-                    </div>
-                    <div class="dash-metrics">
-                        <div class="dash-metric">
-                            <div class="dash-metric-val">97.3%</div>
-                            <div class="dash-metric-lbl">Model Accuracy</div>
-                        </div>
-                        <div class="dash-metric">
-                            <div class="dash-metric-val">1.8ms</div>
-                            <div class="dash-metric-lbl">Response</div>
-                        </div>
-                        <div class="dash-metric">
-                            <div class="dash-metric-val">2.4M</div>
-                            <div class="dash-metric-lbl">Records</div>
-                        </div>
-                        <div class="dash-metric">
-                            <div class="dash-metric-val">24/7</div>
-                            <div class="dash-metric-lbl">Monitoring</div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1594,111 +1383,95 @@
     <div class="about-strip">
         <div class="about-strip-inner">
             <div class="about-card" onclick="navigate('services')">
-                <div class="about-card-icon"><i class="fa-solid fa-brain"></i></div>
                 <h3>Predictive Analytics</h3>
                 <p>Advanced ML models for forecasting, risk assessment and strategic planning.</p>
             </div>
             <div class="about-card" onclick="navigate('services')">
-                <div class="about-card-icon"><i class="fa-solid fa-earth-africa"></i></div>
                 <h3>Geospatial Analysis</h3>
                 <p>Mapping, spatial modeling and GIS-based decision support systems.</p>
             </div>
             <div class="about-card" onclick="navigate('services')">
-                <div class="about-card-icon"><i class="fa-solid fa-heart-pulse"></i></div>
                 <h3>Health Analytics</h3>
                 <p>Epidemiological modeling, disease surveillance and public health data.</p>
             </div>
             <div class="about-card" onclick="navigate('services')">
-                <div class="about-card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                <h3>Training &amp; Capacity</h3>
+                <h3>Training & Capacity</h3>
                 <p>R, Python and data science workshops for organizations.</p>
             </div>
         </div>
     </div>
 </div>
 
-<!-- ═════════════════════════════════════════════════ -->
 <!-- ABOUT SECTION -->
-<!-- ═════════════════════════════════════════════════ -->
 <div class="page-section" id="section-about">
     <div class="section-inner">
         <div class="section-title-bar">
-            <div class="sbar-icon"><i class="fa-solid fa-building-columns"></i></div>
             <div class="sbar-text">
                 <h2>About Informatics Consultancy Firm</h2>
                 <p>Premier data science consultancy based in Sierra Leone</p>
             </div>
         </div>
-        <div class="section-panel">
-            <div class="about-grid">
-                <div class="about-text">
-                    <h3>Who We Are</h3>
-                    <p>Informatics Consultancy Firm (ICF-SL) is Sierra Leone's premier data science and analytics consultancy, dedicated to transforming complex data into actionable business intelligence for governments, NGOs, and development partners.</p>
-                    <p>Our multidisciplinary team of statisticians, data scientists, epidemiologists, and software engineers delivers cutting-edge solutions that drive evidence-based decision-making across West Africa.</p>
-                    <p>Since our founding, we have built an outstanding reputation for rigorous methodology, innovative tools, and measurable impact — particularly in public health, national malaria control, and health systems strengthening.</p>
-                    <ul class="about-list">
-                        <li><i class="fa-solid fa-check-circle"></i> Advanced machine learning and statistical modeling</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Custom software and web-based analytics tools</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Geospatial analysis and GIS dashboards</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Epidemiological research and public health analytics</li>
-                        <li><i class="fa-solid fa-check-circle"></i> DHIS2 integration and health information systems</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Capacity building and training programs (R &amp; Python)</li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="about-info-card">
-                        <div class="info-card-header">
-                            <h4><i class="fa-solid fa-info-circle"></i>&nbsp; Organisation Profile</h4>
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>Who We Are</h3>
+                <p>Informatics Consultancy Firm (ICF-SL) is Sierra Leone's premier data science and analytics consultancy, dedicated to transforming complex data into actionable business intelligence for governments, NGOs, and development partners.</p>
+                <p>Our multidisciplinary team of statisticians, data scientists, epidemiologists, and software engineers delivers cutting-edge solutions that drive evidence-based decision-making across West Africa.</p>
+                <p>Since our founding, we have built an outstanding reputation for rigorous methodology, innovative tools, and measurable impact — particularly in public health, national malaria control, and health systems strengthening.</p>
+                <ul class="about-list">
+                    <li>✓ Advanced machine learning and statistical modeling</li>
+                    <li>✓ Custom software and web-based analytics tools</li>
+                    <li>✓ Geospatial analysis and GIS dashboards</li>
+                    <li>✓ Epidemiological research and public health analytics</li>
+                    <li>✓ DHIS2 integration and health information systems</li>
+                    <li>✓ Capacity building and training programs (R & Python)</li>
+                </ul>
+            </div>
+            <div>
+                <div class="about-info-card">
+                    <div class="info-card-header">
+                        <h4>Organisation Profile</h4>
+                    </div>
+                    <div class="info-card-body">
+                        <div class="info-row">
+                            <div class="info-row-text">
+                                <h5>Organisation</h5>
+                                <p>Informatics Consultancy Firm (ICF-SL)</p>
+                            </div>
                         </div>
-                        <div class="info-card-body">
-                            <div class="info-row">
-                                <div class="info-row-icon"><i class="fa-solid fa-building"></i></div>
-                                <div class="info-row-text">
-                                    <h5>Organisation</h5>
-                                    <p>Informatics Consultancy Firm (ICF-SL)</p>
-                                </div>
+                        <div class="info-row">
+                            <div class="info-row-text">
+                                <h5>Location</h5>
+                                <p>Freetown, Sierra Leone, West Africa</p>
                             </div>
-                            <div class="info-row">
-                                <div class="info-row-icon"><i class="fa-solid fa-location-dot"></i></div>
-                                <div class="info-row-text">
-                                    <h5>Location</h5>
-                                    <p>Freetown, Sierra Leone, West Africa</p>
-                                </div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-row-text">
+                                <h5>Team Size</h5>
+                                <p>50+ expert analysts and scientists</p>
                             </div>
-                            <div class="info-row">
-                                <div class="info-row-icon"><i class="fa-solid fa-users"></i></div>
-                                <div class="info-row-text">
-                                    <h5>Team Size</h5>
-                                    <p>50+ expert analysts and scientists</p>
-                                </div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-row-text">
+                                <h5>Specialisation</h5>
+                                <p>Data Science, Health Analytics, Geospatial</p>
                             </div>
-                            <div class="info-row">
-                                <div class="info-row-icon"><i class="fa-solid fa-star"></i></div>
-                                <div class="info-row-text">
-                                    <h5>Specialisation</h5>
-                                    <p>Data Science, Health Analytics, Geospatial</p>
-                                </div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-row-text">
+                                <h5>Email</h5>
+                                <p>info@informaticsconsultancyfirm.com</p>
                             </div>
-                            <div class="info-row">
-                                <div class="info-row-icon"><i class="fa-solid fa-envelope"></i></div>
-                                <div class="info-row-text">
-                                    <h5>Email</h5>
-                                    <p>info@informaticsconsultancyfirm.com</p>
-                                </div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-row-text">
+                                <h5>Phone</h5>
+                                <p>+232 76 114224</p>
                             </div>
-                            <div class="info-row">
-                                <div class="info-row-icon"><i class="fa-solid fa-phone"></i></div>
-                                <div class="info-row-text">
-                                    <h5>Phone</h5>
-                                    <p>+232 76 114224</p>
-                                </div>
-                            </div>
-                            <div class="info-row">
-                                <div class="info-row-icon"><i class="fa-solid fa-code"></i></div>
-                                <div class="info-row-text">
-                                    <h5>Core Technologies</h5>
-                                    <p>R, Python, DHIS2, GIS, TensorFlow, SQL</p>
-                                </div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-row-text">
+                                <h5>Core Technologies</h5>
+                                <p>R, Python, DHIS2, GIS, TensorFlow, SQL</p>
                             </div>
                         </div>
                     </div>
@@ -1708,108 +1481,91 @@
     </div>
 </div>
 
-<!-- ═════════════════════════════════════════════════ -->
 <!-- SERVICES SECTION -->
-<!-- ═════════════════════════════════════════════════ -->
 <div class="page-section" id="section-services">
     <div class="section-inner">
         <div class="section-title-bar">
-            <div class="sbar-icon"><i class="fa-solid fa-gears"></i></div>
             <div class="sbar-text">
                 <h2>Services We Provide</h2>
                 <p>Comprehensive data science and analytics solutions</p>
             </div>
         </div>
-        <div class="section-panel">
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="sc-head">
-                        <div class="sc-num">01</div>
-                        <div class="sc-icon"><i class="fa-solid fa-brain"></i></div>
-                        <h3>Predictive Analytics &amp; Machine Learning</h3>
-                    </div>
-                    <div class="sc-body">
-                        <p>Advanced ML models for forecasting trends, risk stratification, and strategic planning across healthcare, agriculture, and development sectors.</p>
-                        <div class="sc-tags">
-                            <span class="tag">Random Forest</span>
-                            <span class="tag">Neural Networks</span>
-                            <span class="tag">Time Series</span>
-                        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="sc-head">
+                    <h3>Predictive Analytics & Machine Learning</h3>
+                </div>
+                <div class="sc-body">
+                    <p>Advanced ML models for forecasting trends, risk stratification, and strategic planning across healthcare, agriculture, and development sectors.</p>
+                    <div class="sc-tags">
+                        <span class="tag">Random Forest</span>
+                        <span class="tag">Neural Networks</span>
+                        <span class="tag">Time Series</span>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="sc-head">
-                        <div class="sc-num">02</div>
-                        <div class="sc-icon"><i class="fa-solid fa-chart-pie"></i></div>
-                        <h3>Business Intelligence &amp; Dashboards</h3>
-                    </div>
-                    <div class="sc-body">
-                        <p>Custom interactive dashboards, automated reporting systems and data visualization tools that translate raw data into executive-level insights.</p>
-                        <div class="sc-tags">
-                            <span class="tag">Power BI</span>
-                            <span class="tag">Streamlit</span>
-                            <span class="tag">Tableau</span>
-                        </div>
+            </div>
+            <div class="service-card">
+                <div class="sc-head">
+                    <h3>Business Intelligence & Dashboards</h3>
+                </div>
+                <div class="sc-body">
+                    <p>Custom interactive dashboards, automated reporting systems and data visualization tools that translate raw data into executive-level insights.</p>
+                    <div class="sc-tags">
+                        <span class="tag">Power BI</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">Tableau</span>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="sc-head">
-                        <div class="sc-num">03</div>
-                        <div class="sc-icon"><i class="fa-solid fa-heart-pulse"></i></div>
-                        <h3>Healthcare &amp; Epidemiological Analytics</h3>
-                    </div>
-                    <div class="sc-body">
-                        <p>Specialized medical data analysis, disease surveillance, epidemiological modeling and public health research for national health programs.</p>
-                        <div class="sc-tags">
-                            <span class="tag">DHIS2</span>
-                            <span class="tag">Epi Analysis</span>
-                            <span class="tag">SNT</span>
-                        </div>
+            </div>
+            <div class="service-card">
+                <div class="sc-head">
+                    <h3>Healthcare & Epidemiological Analytics</h3>
+                </div>
+                <div class="sc-body">
+                    <p>Specialized medical data analysis, disease surveillance, epidemiological modeling and public health research for national health programs.</p>
+                    <div class="sc-tags">
+                        <span class="tag">DHIS2</span>
+                        <span class="tag">Epi Analysis</span>
+                        <span class="tag">SNT</span>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="sc-head">
-                        <div class="sc-num">04</div>
-                        <div class="sc-icon"><i class="fa-solid fa-earth-africa"></i></div>
-                        <h3>Geospatial Analysis &amp; GIS</h3>
-                    </div>
-                    <div class="sc-body">
-                        <p>Spatial data processing, map production, health facility catchment modeling, and geographic targeting for intervention planning.</p>
-                        <div class="sc-tags">
-                            <span class="tag">ArcGIS</span>
-                            <span class="tag">QGIS</span>
-                            <span class="tag">Leaflet</span>
-                        </div>
+            </div>
+            <div class="service-card">
+                <div class="sc-head">
+                    <h3>Geospatial Analysis & GIS</h3>
+                </div>
+                <div class="sc-body">
+                    <p>Spatial data processing, map production, health facility catchment modeling, and geographic targeting for intervention planning.</p>
+                    <div class="sc-tags">
+                        <span class="tag">ArcGIS</span>
+                        <span class="tag">QGIS</span>
+                        <span class="tag">Leaflet</span>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="sc-head">
-                        <div class="sc-num">05</div>
-                        <div class="sc-icon"><i class="fa-solid fa-calculator"></i></div>
-                        <h3>Statistical Consulting &amp; Research</h3>
-                    </div>
-                    <div class="sc-body">
-                        <p>Expert statistical analysis, survey design, sampling methodology, and academic research consulting for universities and research institutions.</p>
-                        <div class="sc-tags">
-                            <span class="tag">STATA</span>
-                            <span class="tag">R Studio</span>
-                            <span class="tag">SPSS</span>
-                        </div>
+            </div>
+            <div class="service-card">
+                <div class="sc-head">
+                    <h3>Statistical Consulting & Research</h3>
+                </div>
+                <div class="sc-body">
+                    <p>Expert statistical analysis, survey design, sampling methodology, and academic research consulting for universities and research institutions.</p>
+                    <div class="sc-tags">
+                        <span class="tag">STATA</span>
+                        <span class="tag">R Studio</span>
+                        <span class="tag">SPSS</span>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="sc-head">
-                        <div class="sc-num">06</div>
-                        <div class="sc-icon"><i class="fa-solid fa-laptop-code"></i></div>
-                        <h3>Software Development &amp; Training</h3>
-                    </div>
-                    <div class="sc-body">
-                        <p>Custom data tools, web applications and capacity-building programs in R, Python, and data management for organizations across West Africa.</p>
-                        <div class="sc-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">R</span>
-                            <span class="tag">JavaScript</span>
-                        </div>
+            </div>
+            <div class="service-card">
+                <div class="sc-head">
+                    <h3>Software Development & Training</h3>
+                </div>
+                <div class="sc-body">
+                    <p>Custom data tools, web applications and capacity-building programs in R, Python, and data management for organizations across West Africa.</p>
+                    <div class="sc-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">R</span>
+                        <span class="tag">JavaScript</span>
                     </div>
                 </div>
             </div>
@@ -1817,492 +1573,507 @@
     </div>
 </div>
 
-<!-- ═════════════════════════════════════════════════ -->
 <!-- GALLERY SECTION -->
-<!-- ═════════════════════════════════════════════════ -->
 <div class="page-section" id="section-gallery">
     <div class="section-inner">
         <div class="section-title-bar">
-            <div class="sbar-icon"><i class="fa-solid fa-images"></i></div>
             <div class="sbar-text">
                 <h2>Project Gallery</h2>
-                <p>Live interactive applications — click to open within this browser</p>
+                <p>Explore our portfolio of past projects and achievements</p>
             </div>
         </div>
-        <div class="section-panel">
-            <p class="gallery-intro"><i class="fa-solid fa-hand-pointer"></i>&nbsp; Click any project frame to launch it live in an embedded viewer below. All projects open within this window.</p>
-            <div class="gallery-filter">
-                <button class="gfilter-btn active" onclick="filterGallery('all', this)">
-                    <i class="fa-solid fa-border-all"></i> All Projects
-                </button>
-                <button class="gfilter-btn" onclick="filterGallery('health', this)">
-                    <i class="fa-solid fa-stethoscope"></i> Health Analytics
-                </button>
-                <button class="gfilter-btn" onclick="filterGallery('ml', this)">
-                    <i class="fa-solid fa-brain"></i> Machine Learning
-                </button>
-                <button class="gfilter-btn" onclick="filterGallery('tool', this)">
-                    <i class="fa-solid fa-screwdriver-wrench"></i> Software Tools
-                </button>
+        <p class="gallery-intro">Browse through our collection of successful data science and analytics projects. Click on any project to view it live in an interactive modal.</p>
+        
+        <div class="gallery-filter">
+            <button class="gfilter-btn active" onclick="filterGallery('all', this)">
+                All Projects
+            </button>
+            <button class="gfilter-btn" onclick="filterGallery('health', this)">
+                Health Analytics
+            </button>
+            <button class="gfilter-btn" onclick="filterGallery('ml', this)">
+                Machine Learning
+            </button>
+            <button class="gfilter-btn" onclick="filterGallery('tool', this)">
+                Software Tools
+            </button>
+        </div>
+
+        <div class="gallery-grid">
+            <!-- Project 1 -->
+            <div class="gallery-item" data-cat="health ml" onclick="openModal('https://mohamedsillahkanu.github.io/Hypertension-Dashboard/', 'Hypertension Management System')">
+                <div class="gallery-image">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Hypertension Dashboard" style="background: linear-gradient(135deg, #004080 0%, #0059b3 100%);">
+                </div>
+                <div class="gallery-content">
+                    <div class="gallery-category">Health Analytics</div>
+                    <h3 class="gallery-title">Hypertension Management System</h3>
+                    <p class="gallery-description">Intelligent monitoring and clinical prediction platform for hypertension patients.</p>
+                </div>
             </div>
-            <div class="gallery-grid" id="galleryGrid">
-                <!-- Frame 1 -->
-                <div class="gallery-frame" data-cat="tool" onclick="openModal('https://mohamedsillahkanu.github.io/sl-nmcp-data-analysis-training-plan/', 'Data Analytics Training — R & Python')">
-                    <div class="frame-thumb">
-                        <div class="frame-thumb-inner">
-                            <i class="fa-solid fa-graduation-cap"></i>
-                            <span>Analytics Training Platform</span>
-                        </div>
-                        <div class="frame-view-overlay">
-                            <button class="frame-view-btn"><i class="fa-solid fa-eye"></i> Open Live</button>
-                        </div>
-                    </div>
-                    <div class="frame-caption">
-                        <div class="frame-cat">Education</div>
-                        <div class="frame-title">Data Analytics Training in R &amp; Python</div>
-                        <div class="frame-desc">Comprehensive NMCP training plan for data analysis.</div>
-                    </div>
+
+            <!-- Project 2 -->
+            <div class="gallery-item" data-cat="health ml" onclick="openModal('https://mohamedsillahkanu.github.io/Heart-Disease/', 'Cardiovascular Disease Prediction')">
+                <div class="gallery-image">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Heart Disease Prediction" style="background: linear-gradient(135deg, #003366 0%, #004d99 100%);">
                 </div>
-                <!-- Frame 2 -->
-                <div class="gallery-frame" data-cat="health ml" onclick="openModal('https://mohamedsillahkanu.github.io/Hypertension-Dashboard/', 'Hypertension Management Dashboard')">
-                    <div class="frame-thumb">
-                        <div class="frame-thumb-inner" style="background:linear-gradient(135deg,#002855,#004f9f);">
-                            <i class="fa-solid fa-heart-pulse"></i>
-                            <span>Hypertension Dashboard</span>
-                        </div>
-                        <div class="frame-view-overlay">
-                            <button class="frame-view-btn"><i class="fa-solid fa-eye"></i> Open Live</button>
-                        </div>
-                    </div>
-                    <div class="frame-caption">
-                        <div class="frame-cat">Health Analytics</div>
-                        <div class="frame-title">Hypertension Management System</div>
-                        <div class="frame-desc">Intelligent monitoring and clinical prediction dashboard.</div>
-                    </div>
+                <div class="gallery-content">
+                    <div class="gallery-category">Machine Learning</div>
+                    <h3 class="gallery-title">Cardiovascular Disease Prediction</h3>
+                    <p class="gallery-description">ML-powered risk assessment and early detection system for CVD.</p>
                 </div>
-                <!-- Frame 3 -->
-                <div class="gallery-frame" data-cat="health ml" onclick="openModal('https://mohamedsillahkanu.github.io/Heart-Disease/', 'Cardiovascular Disease Prediction')">
-                    <div class="frame-thumb">
-                        <div class="frame-thumb-inner" style="background:linear-gradient(135deg,#003d7a,#c8a84b);">
-                            <i class="fa-solid fa-heart"></i>
-                            <span>Heart Disease Predictor</span>
-                        </div>
-                        <div class="frame-view-overlay">
-                            <button class="frame-view-btn"><i class="fa-solid fa-eye"></i> Open Live</button>
-                        </div>
-                    </div>
-                    <div class="frame-caption">
-                        <div class="frame-cat">Machine Learning</div>
-                        <div class="frame-title">Cardiovascular Disease Prediction</div>
-                        <div class="frame-desc">ML-powered cardiovascular risk assessment system.</div>
-                    </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="gallery-item" data-cat="health ml" onclick="openModal('https://mohamedsillahkanu.github.io/Diabetes-dashboard/', 'Diabetes Analytics Platform')">
+                <div class="gallery-image">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Diabetes Dashboard" style="background: linear-gradient(135deg, #004080 0%, #0066cc 100%);">
                 </div>
-                <!-- Frame 4 -->
-                <div class="gallery-frame" data-cat="health ml" onclick="openModal('https://mohamedsillahkanu.github.io/Diabetes-dashboard/', 'Diabetes Analytics Platform')">
-                    <div class="frame-thumb">
-                        <div class="frame-thumb-inner" style="background:linear-gradient(135deg,#001f40,#003d7a);">
-                            <i class="fa-solid fa-syringe"></i>
-                            <span>Diabetes Analytics</span>
-                        </div>
-                        <div class="frame-view-overlay">
-                            <button class="frame-view-btn"><i class="fa-solid fa-eye"></i> Open Live</button>
-                        </div>
-                    </div>
-                    <div class="frame-caption">
-                        <div class="frame-cat">Health Analytics</div>
-                        <div class="frame-title">Diabetes Analytics Platform</div>
-                        <div class="frame-desc">Real-time diabetes management and prediction platform.</div>
-                    </div>
+                <div class="gallery-content">
+                    <div class="gallery-category">Health Analytics</div>
+                    <h3 class="gallery-title">Diabetes Analytics Platform</h3>
+                    <p class="gallery-description">Comprehensive diabetes management and real-time monitoring dashboard.</p>
                 </div>
-                <!-- Frame 5 -->
-                <div class="gallery-frame" data-cat="ml" onclick="openModal('https://mohamedsillahkanu.github.io/colon-cancer/', 'Colon & Lung Cancer CNN Classification')">
-                    <div class="frame-thumb">
-                        <div class="frame-thumb-inner" style="background:linear-gradient(135deg,#002855,#1a7a40);">
-                            <i class="fa-solid fa-microscope"></i>
-                            <span>Cancer CNN Classifier</span>
-                        </div>
-                        <div class="frame-view-overlay">
-                            <button class="frame-view-btn"><i class="fa-solid fa-eye"></i> Open Live</button>
-                        </div>
-                    </div>
-                    <div class="frame-caption">
-                        <div class="frame-cat">Deep Learning</div>
-                        <div class="frame-title">Colon &amp; Lung Cancer CNN Classification</div>
-                        <div class="frame-desc">Computer vision model for automated cancer image analysis.</div>
-                    </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="gallery-item" data-cat="ml" onclick="openModal('https://mohamedsillahkanu.github.io/colon-cancer/', 'Colon & Lung Cancer CNN Classification')">
+                <div class="gallery-image">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Cancer Classification" style="background: linear-gradient(135deg, #002952 0%, #004080 100%);">
                 </div>
-                <!-- Frame 6 -->
-                <div class="gallery-frame" data-cat="tool" onclick="openModal('https://mohamedsillahkanu.github.io/costing-tool/', 'SNT Costing Tool')">
-                    <div class="frame-thumb">
-                        <div class="frame-thumb-inner" style="background:linear-gradient(135deg,#003d7a,#c8a84b);">
-                            <i class="fa-solid fa-calculator"></i>
-                            <span>SNT Costing Tool</span>
-                        </div>
-                        <div class="frame-view-overlay">
-                            <button class="frame-view-btn"><i class="fa-solid fa-eye"></i> Open Live</button>
-                        </div>
-                    </div>
-                    <div class="frame-caption">
-                        <div class="frame-cat">Software Tool</div>
-                        <div class="frame-title">SNT Costing Calculator</div>
-                        <div class="frame-desc">National malaria intervention costing and planning tool.</div>
-                    </div>
+                <div class="gallery-content">
+                    <div class="gallery-category">Deep Learning</div>
+                    <h3 class="gallery-title">Colon & Lung Cancer CNN Classification</h3>
+                    <p class="gallery-description">Computer vision model for automated medical image classification.</p>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="gallery-item" data-cat="tool" onclick="openModal('https://mohamedsillahkanu.github.io/costing-tool/', 'SNT Costing Tool')">
+                <div class="gallery-image">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="SNT Costing Tool" style="background: linear-gradient(135deg, #003d73 0%, #005299 100%);">
+                </div>
+                <div class="gallery-content">
+                    <div class="gallery-category">Software Tool</div>
+                    <h3 class="gallery-title">SNT Costing Calculator</h3>
+                    <p class="gallery-description">National malaria intervention costing and planning tool.</p>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="gallery-item" data-cat="tool" onclick="openModal('https://mohamedsillahkanu.github.io/sl-nmcp-data-analysis-training-plan/', 'Data Analytics Training')">
+                <div class="gallery-image">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Training Platform" style="background: linear-gradient(135deg, #004080 0%, #0073e6 100%);">
+                </div>
+                <div class="gallery-content">
+                    <div class="gallery-category">Education</div>
+                    <h3 class="gallery-title">Data Analytics Training in R & Python</h3>
+                    <p class="gallery-description">Comprehensive NMCP training plan for data analysis.</p>
+                </div>
+            </div>
+
+            <!-- Project 7 -->
+            <div class="gallery-item" data-cat="health" onclick="openModal('https://mohamedsillahkanu.github.io/tpr/', 'Test Positivity Rate')">
+                <div class="gallery-image">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Test Positivity Rate" style="background: linear-gradient(135deg, #00264d 0%, #003d73 100%);">
+                </div>
+                <div class="gallery-content">
+                    <div class="gallery-category">Epidemiology</div>
+                    <h3 class="gallery-title">Test Positivity Rate Analysis</h3>
+                    <p class="gallery-description">Malaria test positivity rate computation and geospatial visualization.</p>
+                </div>
+            </div>
+
+            <!-- Project 8 -->
+            <div class="gallery-item" data-cat="health" onclick="openModal('https://mohamedsillahkanu.github.io/crude-incidence/', 'Crude Incidence Tool')">
+                <div class="gallery-image">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Crude Incidence" style="background: linear-gradient(135deg, #004080 0%, #0059b3 100%);">
+                </div>
+                <div class="gallery-content">
+                    <div class="gallery-category">Epidemiology</div>
+                    <h3 class="gallery-title">Crude Incidence Calculator</h3>
+                    <p class="gallery-description">Epidemiological incidence rate computation and trend analysis.</p>
+                </div>
+            </div>
+
+            <!-- Project 9 -->
+            <div class="gallery-item" data-cat="health" onclick="openModal('https://mohamedsillahkanu.github.io/heatmap/', 'Reporting Matrix Heatmap')">
+                <div class="gallery-image">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Reporting Heatmap" style="background: linear-gradient(135deg, #002952 0%, #004d99 100%);">
+                </div>
+                <div class="gallery-content">
+                    <div class="gallery-category">Reporting</div>
+                    <h3 class="gallery-title">Reporting Matrix & Heatmap</h3>
+                    <p class="gallery-description">DHIS2 reporting completeness visualization across facilities.</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- ═════════════════════════════════════════════════ -->
-<!-- DATA SCIENCE PROJECTS (SHELF) -->
-<!-- ═════════════════════════════════════════════════ -->
-<div class="page-section" id="section-projects">
+<!-- IMAGES SECTION -->
+<div class="page-section" id="section-images">
     <div class="section-inner">
         <div class="section-title-bar">
-            <div class="sbar-icon"><i class="fa-solid fa-layer-group"></i></div>
             <div class="sbar-text">
-                <h2>Data Science Projects</h2>
-                <p>Research and analytics projects implemented by ICF-SL — click to open live</p>
+                <h2>Images Gallery</h2>
+                <p>Visual showcase of our projects, team, and impact</p>
             </div>
         </div>
-        <div class="section-panel">
-            <!-- Shelf 1: Health Analytics -->
-            <div class="shelf">
-                <div class="shelf-label"><i class="fa-solid fa-heart-pulse"></i>&nbsp; Healthcare Analytics</div>
-                <div class="shelf-row">
-                    <div class="shelf-item" onclick="openModal('https://mohamedsillahkanu.github.io/Hypertension-Dashboard/', 'Hypertension Management System')">
-                        <div class="shelf-item-body">
-                            <div class="shelf-item-icon"><i class="fa-solid fa-heart-pulse"></i></div>
-                            <h4>Hypertension Management System</h4>
-                            <p>Intelligent monitoring and clinical prediction platform for hypertension patients.</p>
-                        </div>
-                        <div class="shelf-item-foot">
-                            <span>Health Analytics</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
+        
+        <div class="images-filter">
+            <button class="img-filter-btn active" onclick="filterImages('all', this)">
+                All Images
+            </button>
+            <button class="img-filter-btn" onclick="filterImages('projects', this)">
+                Projects
+            </button>
+            <button class="img-filter-btn" onclick="filterImages('team', this)">
+                Team
+            </button>
+            <button class="img-filter-btn" onclick="filterImages('events', this)">
+                Events
+            </button>
+            <button class="img-filter-btn" onclick="filterImages('office', this)">
+                Office
+            </button>
+        </div>
+
+        <div class="images-grid">
+            <!-- Project Images -->
+            <div class="image-frame" data-category="projects">
+                <div class="frame-border">
+                    <div class="frame-content">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Project 1" style="background: linear-gradient(135deg, #004080 0%, #0066cc 100%);">
                     </div>
-                    <div class="shelf-item" onclick="openModal('https://mohamedsillahkanu.github.io/Heart-Disease/', 'Cardiovascular Disease Prediction')">
-                        <div class="shelf-item-body">
-                            <div class="shelf-item-icon"><i class="fa-solid fa-heart"></i></div>
-                            <h4>Cardiovascular Disease Prediction</h4>
-                            <p>ML-powered risk assessment and early detection system for CVD.</p>
-                        </div>
-                        <div class="shelf-item-foot">
-                            <span>Machine Learning</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-                    </div>
-                    <div class="shelf-item" onclick="openModal('https://mohamedsillahkanu.github.io/Diabetes-dashboard/', 'Diabetes Analytics Platform')">
-                        <div class="shelf-item-body">
-                            <div class="shelf-item-icon"><i class="fa-solid fa-syringe"></i></div>
-                            <h4>Diabetes Analytics Platform</h4>
-                            <p>Comprehensive diabetes management and real-time monitoring dashboard.</p>
-                        </div>
-                        <div class="shelf-item-foot">
-                            <span>Health Analytics</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-                    </div>
-                    <div class="shelf-item" onclick="openModal('https://mohamedsillahkanu.github.io/sl-nmcp-data-analysis-training-plan/', 'Data Analytics Training')">
-                        <div class="shelf-item-body">
-                            <div class="shelf-item-icon"><i class="fa-solid fa-chart-bar"></i></div>
-                            <h4>NMCP Data Analytics Training</h4>
-                            <p>Structured R &amp; Python training plan for National Malaria Control Programme.</p>
-                        </div>
-                        <div class="shelf-item-foot">
-                            <span>Training</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-                    </div>
+                </div>
+                <div class="frame-caption">
+                    <h4>Data Dashboard Implementation</h4>
+                    <p>Health analytics platform deployment</p>
                 </div>
             </div>
 
-            <!-- Shelf 2: Machine Learning & AI -->
-            <div class="shelf">
-                <div class="shelf-label"><i class="fa-solid fa-brain"></i>&nbsp; Machine Learning &amp; Artificial Intelligence</div>
-                <div class="shelf-row">
-                    <div class="shelf-item" onclick="openModal('https://mohamedsillahkanu.github.io/colon-cancer/', 'Colon & Lung Cancer CNN')">
-                        <div class="shelf-item-body">
-                            <div class="shelf-item-icon"><i class="fa-solid fa-microscope"></i></div>
-                            <h4>Colon &amp; Lung Cancer CNN Classifier</h4>
-                            <p>Deep learning computer vision model for automated medical image classification.</p>
-                        </div>
-                        <div class="shelf-item-foot">
-                            <span>Deep Learning</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
+            <div class="image-frame" data-category="projects">
+                <div class="frame-border">
+                    <div class="frame-content">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Project 2" style="background: linear-gradient(135deg, #003366 0%, #004d99 100%);">
                     </div>
-                    <div class="shelf-item" onclick="openModal('https://mohamedsillahkanu.github.io/tpr/', 'Test Positivity Rate')">
-                        <div class="shelf-item-body">
-                            <div class="shelf-item-icon"><i class="fa-solid fa-vials"></i></div>
-                            <h4>Test Positivity Rate Analysis</h4>
-                            <p>Malaria test positivity rate computation and geospatial visualization.</p>
-                        </div>
-                        <div class="shelf-item-foot">
-                            <span>Epidemiology</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
+                </div>
+                <div class="frame-caption">
+                    <h4>GIS Mapping Project</h4>
+                    <p>Geospatial analysis for health facilities</p>
+                </div>
+            </div>
+
+            <div class="image-frame" data-category="projects">
+                <div class="frame-border">
+                    <div class="frame-content">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Project 3" style="background: linear-gradient(135deg, #002952 0%, #004080 100%);">
                     </div>
-                    <div class="shelf-item" onclick="openModal('https://mohamedsillahkanu.github.io/crude-incidence/', 'Crude Incidence Tool')">
-                        <div class="shelf-item-body">
-                            <div class="shelf-item-icon"><i class="fa-solid fa-chart-line"></i></div>
-                            <h4>Crude Incidence Calculator</h4>
-                            <p>Epidemiological incidence rate computation and trend analysis.</p>
-                        </div>
-                        <div class="shelf-item-foot">
-                            <span>Epidemiology</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
+                </div>
+                <div class="frame-caption">
+                    <h4>ML Model Development</h4>
+                    <p>Predictive analytics implementation</p>
+                </div>
+            </div>
+
+            <!-- Team Images -->
+            <div class="image-frame" data-category="team">
+                <div class="frame-border">
+                    <div class="frame-content">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Team 1" style="background: linear-gradient(135deg, #004080 0%, #0073e6 100%);">
                     </div>
-                    <div class="shelf-item" onclick="openModal('https://mohamedsillahkanu.github.io/heatmap/', 'Reporting Matrix Heatmap')">
-                        <div class="shelf-item-body">
-                            <div class="shelf-item-icon"><i class="fa-solid fa-table-cells"></i></div>
-                            <h4>Reporting Matrix &amp; Heatmap</h4>
-                            <p>DHIS2 reporting completeness visualization across facilities and periods.</p>
-                        </div>
-                        <div class="shelf-item-foot">
-                            <span>Reporting</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
+                </div>
+                <div class="frame-caption">
+                    <h4>Data Science Team</h4>
+                    <p>Our expert analysts at work</p>
+                </div>
+            </div>
+
+            <div class="image-frame" data-category="team">
+                <div class="frame-border">
+                    <div class="frame-content">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Team 2" style="background: linear-gradient(135deg, #003d73 0%, #005299 100%);">
                     </div>
+                </div>
+                <div class="frame-caption">
+                    <h4>Leadership Meeting</h4>
+                    <p>Strategic planning session</p>
+                </div>
+            </div>
+
+            <div class="image-frame" data-category="team">
+                <div class="frame-border">
+                    <div class="frame-content">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Team 3" style="background: linear-gradient(135deg, #00264d 0%, #003d73 100%);">
+                    </div>
+                </div>
+                <div class="frame-caption">
+                    <h4>Training Workshop</h4>
+                    <p>R and Python training session</p>
+                </div>
+            </div>
+
+            <!-- Events Images -->
+            <div class="image-frame" data-category="events">
+                <div class="frame-border">
+                    <div class="frame-content">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Event 1" style="background: linear-gradient(135deg, #004080 0%, #0059b3 100%);">
+                    </div>
+                </div>
+                <div class="frame-caption">
+                    <h4>Health Conference 2024</h4>
+                    <p>National malaria control program</p>
+                </div>
+            </div>
+
+            <div class="image-frame" data-category="events">
+                <div class="frame-border">
+                    <div class="frame-content">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Event 2" style="background: linear-gradient(135deg, #002952 0%, #004d99 100%);">
+                    </div>
+                </div>
+                <div class="frame-caption">
+                    <h4>Data Science Summit</h4>
+                    <p>West Africa analytics forum</p>
+                </div>
+            </div>
+
+            <div class="image-frame" data-category="events">
+                <div class="frame-border">
+                    <div class="frame-content">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Event 3" style="background: linear-gradient(135deg, #003366 0%, #0066cc 100%);">
+                    </div>
+                </div>
+                <div class="frame-caption">
+                    <h4>Project Launch</h4>
+                    <p>New dashboard presentation</p>
+                </div>
+            </div>
+
+            <!-- Office Images -->
+            <div class="image-frame" data-category="office">
+                <div class="frame-border">
+                    <div class="frame-content">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Office 1" style="background: linear-gradient(135deg, #004080 0%, #0073e6 100%);">
+                    </div>
+                </div>
+                <div class="frame-caption">
+                    <h4>ICF Office Freetown</h4>
+                    <p>Our headquarters workspace</p>
+                </div>
+            </div>
+
+            <div class="image-frame" data-category="office">
+                <div class="frame-border">
+                    <div class="frame-content">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Office 2" style="background: linear-gradient(135deg, #003d73 0%, #005299 100%);">
+                    </div>
+                </div>
+                <div class="frame-caption">
+                    <h4>Analysis Lab</h4>
+                    <p>Data science workstation area</p>
+                </div>
+            </div>
+
+            <div class="image-frame" data-category="office">
+                <div class="frame-border">
+                    <div class="frame-content">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" alt="Office 3" style="background: linear-gradient(135deg, #00264d 0%, #004080 100%);">
+                    </div>
+                </div>
+                <div class="frame-caption">
+                    <h4>Conference Room</h4>
+                    <p>Client meeting and presentation space</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- ═════════════════════════════════════════════════ -->
-<!-- SOFTWARE TOOLS SECTION -->
-<!-- ═════════════════════════════════════════════════ -->
+<!-- TOOLS SECTION -->
 <div class="page-section" id="section-tools">
     <div class="section-inner">
         <div class="section-title-bar">
-            <div class="sbar-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
             <div class="sbar-text">
                 <h2>Software Tools We Have Built</h2>
-                <p>Open-source and custom data tools for health and development — click to launch</p>
+                <p>Open-source and custom data tools for health and development</p>
             </div>
         </div>
-        <div class="section-panel">
-            <!-- Featured Tool: D-MAT -->
-            <div class="shelf" style="margin-bottom:1.5rem;">
-                <div class="shelf-label"><i class="fa-solid fa-star"></i>&nbsp; Featured Software</div>
-                <div class="shelf-row">
-                    <div class="shelf-item" style="width:300px;" onclick="openModal('https://mohamedsillahkanu.github.io/snt-data-assembly-and-communication-chanel/', 'D-MAT — Data Management and Analysis Tools')">
-                        <div class="shelf-item-body">
-                            <div class="shelf-item-icon" style="background:var(--navy);"><i class="fa-solid fa-database" style="color:var(--accent);"></i></div>
-                            <h4>D-MAT Software</h4>
-                            <p>Full-featured Data Management and Analysis Tools platform — 21 modules for SNT analysis pipeline.</p>
-                        </div>
-                        <div class="shelf-item-foot">
-                            <span>Full Platform</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-                    </div>
-                    <div class="shelf-item" style="width:280px;" onclick="openModal('https://mohamedsillahkanu.github.io/costing-tool/', 'SNT Costing Calculator')">
-                        <div class="shelf-item-body">
-                            <div class="shelf-item-icon" style="background:var(--navy);"><i class="fa-solid fa-calculator" style="color:var(--accent);"></i></div>
-                            <h4>SNT Costing Calculator</h4>
-                            <p>National malaria intervention costing and budget planning tool for NMCP.</p>
-                        </div>
-                        <div class="shelf-item-foot">
-                            <span>Planning Tool</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-                    </div>
+        <div class="tools-grid">
+            <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/dataset-download/', 'DHIS2 Data Extractor')">
+                <div class="tc-head">
+                    <h3>DHIS2 Data Extractor</h3>
+                </div>
+                <div class="tc-body">
+                    <p>Extract routine health data from DHIS2 systems with customizable filters and output formats.</p>
+                    <div class="tc-status"><div class="status-dot"></div> Live</div>
                 </div>
             </div>
 
-            <!-- Tools Grid -->
-            <div class="tools-grid">
-                <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/dataset-download/', 'DHIS2 Data Extractor')">
-                    <div class="tc-head">
-                        <div class="tc-num">Tool 01</div>
-                        <div class="tc-icon"><i class="fa-solid fa-download"></i></div>
-                        <h3>DHIS2 Data Extractor</h3>
-                    </div>
-                    <div class="tc-body">
-                        <p>Extract routine health data from DHIS2 systems with customizable filters and output formats.</p>
-                        <div class="tc-status"><div class="status-dot"></div> Live</div>
-                    </div>
+            <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/combine-files/', 'File Combiner Tool')">
+                <div class="tc-head">
+                    <h3>File Combiner</h3>
                 </div>
-                <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/combine-files/', 'File Combiner Tool')">
-                    <div class="tc-head">
-                        <div class="tc-num">Tool 02</div>
-                        <div class="tc-icon"><i class="fa-solid fa-file-zipper"></i></div>
-                        <h3>File Combiner</h3>
-                    </div>
-                    <div class="tc-body">
-                        <p>Merge and combine multiple data files into a single consolidated dataset with auto-matching.</p>
-                        <div class="tc-status"><div class="status-dot"></div> Live</div>
-                    </div>
+                <div class="tc-body">
+                    <p>Merge and combine multiple data files into a single consolidated dataset with auto-matching.</p>
+                    <div class="tc-status"><div class="status-dot"></div> Live</div>
                 </div>
-                <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/outlier/', 'Outlier Detection Tool')">
-                    <div class="tc-head">
-                        <div class="tc-num">Tool 03</div>
-                        <div class="tc-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-                        <h3>Outlier Detection</h3>
-                    </div>
-                    <div class="tc-body">
-                        <p>Statistical outlier identification and handling for health routine data quality assurance.</p>
-                        <div class="tc-status"><div class="status-dot"></div> Live</div>
-                    </div>
+            </div>
+
+            <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/outlier/', 'Outlier Detection Tool')">
+                <div class="tc-head">
+                    <h3>Outlier Detection</h3>
                 </div>
-                <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/fuzzy-mfl-dhis2/', 'Fuzzy Name Matcher')">
-                    <div class="tc-head">
-                        <div class="tc-num">Tool 04</div>
-                        <div class="tc-icon"><i class="fa-solid fa-shuffle"></i></div>
-                        <h3>Fuzzy Name Matcher</h3>
-                    </div>
-                    <div class="tc-body">
-                        <p>Fuzzy logic matching tool for reconciling facility names across MFL, DHIS2 and shapefiles.</p>
-                        <div class="tc-status"><div class="status-dot"></div> Live</div>
-                    </div>
+                <div class="tc-body">
+                    <p>Statistical outlier identification and handling for health routine data quality assurance.</p>
+                    <div class="tc-status"><div class="status-dot"></div> Live</div>
                 </div>
-                <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/hf-coordinate-cleaning/', 'Coordinate Cleaner')">
-                    <div class="tc-head">
-                        <div class="tc-num">Tool 05</div>
-                        <div class="tc-icon"><i class="fa-solid fa-map-pin"></i></div>
-                        <h3>HF Coordinate Cleaner</h3>
-                    </div>
-                    <div class="tc-body">
-                        <p>Clean and validate geographic coordinates for health facilities across Sierra Leone.</p>
-                        <div class="tc-status"><div class="status-dot"></div> Live</div>
-                    </div>
+            </div>
+
+            <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/fuzzy-mfl-dhis2/', 'Fuzzy Name Matcher')">
+                <div class="tc-head">
+                    <h3>Fuzzy Name Matcher</h3>
                 </div>
-                <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/wide-to-long-format/', 'Format Converter')">
-                    <div class="tc-head">
-                        <div class="tc-num">Tool 06</div>
-                        <div class="tc-icon"><i class="fa-solid fa-arrows-left-right"></i></div>
-                        <h3>Wide-to-Long Converter</h3>
-                    </div>
-                    <div class="tc-body">
-                        <p>Reshape datasets between wide and long tabular formats for analysis compatibility.</p>
-                        <div class="tc-status"><div class="status-dot"></div> Live</div>
-                    </div>
+                <div class="tc-body">
+                    <p>Fuzzy logic matching tool for reconciling facility names across MFL, DHIS2 and shapefiles.</p>
+                    <div class="tc-status"><div class="status-dot"></div> Live</div>
                 </div>
-                <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/reporting-rate/', 'Reporting Rate Tool')">
-                    <div class="tc-head">
-                        <div class="tc-num">Tool 07</div>
-                        <div class="tc-icon"><i class="fa-solid fa-percent"></i></div>
-                        <h3>Reporting Rate Analyser</h3>
-                    </div>
-                    <div class="tc-body">
-                        <p>Calculate and visualize health facility reporting rates by administrative level and period.</p>
-                        <div class="tc-status"><div class="status-dot"></div> Live</div>
-                    </div>
+            </div>
+
+            <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/hf-coordinate-cleaning/', 'Coordinate Cleaner')">
+                <div class="tc-head">
+                    <h3>HF Coordinate Cleaner</h3>
                 </div>
-                <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/geojson-to-shapefile/', 'GeoJSON Converter')">
-                    <div class="tc-head">
-                        <div class="tc-num">Tool 08</div>
-                        <div class="tc-icon"><i class="fa-solid fa-globe"></i></div>
-                        <h3>GeoJSON / Shapefile Converter</h3>
-                    </div>
-                    <div class="tc-body">
-                        <p>Convert between GeoJSON and Shapefile formats for GIS workflow compatibility.</p>
-                        <div class="tc-status"><div class="status-dot"></div> Live</div>
-                    </div>
+                <div class="tc-body">
+                    <p>Clean and validate geographic coordinates for health facilities across Sierra Leone.</p>
+                    <div class="tc-status"><div class="status-dot"></div> Live</div>
+                </div>
+            </div>
+
+            <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/wide-to-long-format/', 'Format Converter')">
+                <div class="tc-head">
+                    <h3>Wide-to-Long Converter</h3>
+                </div>
+                <div class="tc-body">
+                    <p>Reshape datasets between wide and long tabular formats for analysis compatibility.</p>
+                    <div class="tc-status"><div class="status-dot"></div> Live</div>
+                </div>
+            </div>
+
+            <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/reporting-rate/', 'Reporting Rate Tool')">
+                <div class="tc-head">
+                    <h3>Reporting Rate Analyser</h3>
+                </div>
+                <div class="tc-body">
+                    <p>Calculate and visualize health facility reporting rates by administrative level and period.</p>
+                    <div class="tc-status"><div class="status-dot"></div> Live</div>
+                </div>
+            </div>
+
+            <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/geojson-to-shapefile/', 'GeoJSON Converter')">
+                <div class="tc-head">
+                    <h3>GeoJSON / Shapefile Converter</h3>
+                </div>
+                <div class="tc-body">
+                    <p>Convert between GeoJSON and Shapefile formats for GIS workflow compatibility.</p>
+                    <div class="tc-status"><div class="status-dot"></div> Live</div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- ═════════════════════════════════════════════════ -->
 <!-- CONTACT SECTION -->
-<!-- ═════════════════════════════════════════════════ -->
 <div class="page-section" id="section-contact">
     <div class="section-inner">
         <div class="section-title-bar">
-            <div class="sbar-icon"><i class="fa-solid fa-paper-plane"></i></div>
             <div class="sbar-text">
                 <h2>Get in Touch</h2>
                 <p>Let's discuss how ICF-SL can support your data and analytics needs</p>
             </div>
         </div>
-        <div class="section-panel">
-            <div class="contact-layout">
-                <div class="contact-info-block">
-                    <h3>Contact Information</h3>
-                    <p>Our team is ready to help you transform your data challenges into strategic opportunities. Reach out to start the conversation.</p>
-                    <div class="contact-detail">
-                        <div class="cd-icon"><i class="fa-solid fa-location-dot"></i></div>
-                        <div class="cd-text">
-                            <h5>Head Office</h5>
-                            <p>Freetown, Sierra Leone, West Africa</p>
-                        </div>
-                    </div>
-                    <div class="contact-detail">
-                        <div class="cd-icon"><i class="fa-solid fa-phone"></i></div>
-                        <div class="cd-text">
-                            <h5>Phone</h5>
-                            <p>+232 76 114224</p>
-                        </div>
-                    </div>
-                    <div class="contact-detail">
-                        <div class="cd-icon"><i class="fa-solid fa-envelope"></i></div>
-                        <div class="cd-text">
-                            <h5>Email</h5>
-                            <p>info@informaticsconsultancyfirm.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-detail">
-                        <div class="cd-icon"><i class="fa-brands fa-linkedin"></i></div>
-                        <div class="cd-text">
-                            <h5>LinkedIn</h5>
-                            <p>linkedin.com/in/mohamed-sillah-kanu</p>
-                        </div>
-                    </div>
-                    <div class="contact-detail">
-                        <div class="cd-icon"><i class="fa-brands fa-github"></i></div>
-                        <div class="cd-text">
-                            <h5>GitHub</h5>
-                            <p>github.com/mohamedsillahkanu</p>
-                        </div>
+        <div class="contact-layout">
+            <div class="contact-info-block">
+                <h3>Contact Information</h3>
+                <p>Our team is ready to help you transform your data challenges into strategic opportunities. Reach out to start the conversation.</p>
+                
+                <div class="contact-detail">
+                    <div class="cd-text">
+                        <h5>Head Office</h5>
+                        <p>Freetown, Sierra Leone, West Africa</p>
                     </div>
                 </div>
-                <div class="form-wrapper">
-                    <div class="form-head">
-                        <i class="fa-solid fa-file-pen" style="color:var(--accent);"></i>
-                        <h4>Send Us a Message</h4>
+
+                <div class="contact-detail">
+                    <div class="cd-text">
+                        <h5>Phone</h5>
+                        <p>+232 76 114224</p>
                     </div>
-                    <div class="form-body">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Full Name</label>
-                                <input type="text" placeholder="Your full name">
-                            </div>
-                            <div class="form-group">
-                                <label>Email Address</label>
-                                <input type="email" placeholder="your@email.com">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Organisation</label>
-                                <input type="text" placeholder="Your organisation">
-                            </div>
-                            <div class="form-group">
-                                <label>Service Interest</label>
-                                <select>
-                                    <option value="">Select a service...</option>
-                                    <option>Predictive Analytics</option>
-                                    <option>Healthcare Analytics</option>
-                                    <option>Geospatial Analysis</option>
-                                    <option>Software Development</option>
-                                    <option>Training &amp; Capacity Building</option>
-                                    <option>Statistical Consulting</option>
-                                </select>
-                            </div>
+                </div>
+
+                <div class="contact-detail">
+                    <div class="cd-text">
+                        <h5>Email</h5>
+                        <p>info@informaticsconsultancyfirm.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-detail">
+                    <div class="cd-text">
+                        <h5>LinkedIn</h5>
+                        <p>linkedin.com/in/mohamed-sillah-kanu</p>
+                    </div>
+                </div>
+
+                <div class="contact-detail">
+                    <div class="cd-text">
+                        <h5>GitHub</h5>
+                        <p>github.com/mohamedsillahkanu</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-wrapper">
+                <div class="form-head">
+                    <h4>Send Us a Message</h4>
+                </div>
+                <div class="form-body">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Your full name">
                         </div>
                         <div class="form-group">
-                            <label>Message</label>
-                            <textarea placeholder="Describe your project or inquiry..."></textarea>
+                            <label>Email Address</label>
+                            <input type="email" placeholder="your@email.com">
                         </div>
-                        <button class="btn btn-navy" onclick="submitForm(this)" style="width:100%;justify-content:center;">
-                            <i class="fa-solid fa-paper-plane"></i> Send Message
-                        </button>
                     </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Organisation</label>
+                            <input type="text" placeholder="Your organisation">
+                        </div>
+                        <div class="form-group">
+                            <label>Service Interest</label>
+                            <select>
+                                <option value="">Select a service...</option>
+                                <option>Predictive Analytics</option>
+                                <option>Healthcare Analytics</option>
+                                <option>Geospatial Analysis</option>
+                                <option>Software Development</option>
+                                <option>Training & Capacity Building</option>
+                                <option>Statistical Consulting</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea placeholder="Describe your project or inquiry..."></textarea>
+                    </div>
+                    <button class="btn btn-blue" onclick="submitForm(this)" style="width:100%;justify-content:center;">
+                        Send Message
+                    </button>
                 </div>
             </div>
         </div>
@@ -2311,36 +2082,20 @@
 
 <!-- FOOTER -->
 <footer>
-    <div class="footer-inner">
-        <div class="footer-brand">
-            <h3>Informatics Consultancy Firm (ICF-SL)</h3>
-            <p>Sierra Leone's premier data science and analytics consultancy. Transforming complex data into actionable intelligence for governments, NGOs, and development partners across West Africa since 2023.</p>
+    <div class="footer-content">
+        <div class="footer-left">
+            <p>Freetown, Sierra Leone</p>
         </div>
-        <div class="footer-col">
-            <h4>Navigation</h4>
-            <ul>
-                <li><a href="#" onclick="navigate('home');return false;"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
-                <li><a href="#" onclick="navigate('about');return false;"><i class="fa-solid fa-chevron-right"></i> About ICF</a></li>
-                <li><a href="#" onclick="navigate('services');return false;"><i class="fa-solid fa-chevron-right"></i> Services</a></li>
-                <li><a href="#" onclick="navigate('gallery');return false;"><i class="fa-solid fa-chevron-right"></i> Project Gallery</a></li>
-                <li><a href="#" onclick="navigate('projects');return false;"><i class="fa-solid fa-chevron-right"></i> Data Science Projects</a></li>
-                <li><a href="#" onclick="navigate('tools');return false;"><i class="fa-solid fa-chevron-right"></i> Software Tools</a></li>
-                <li><a href="#" onclick="navigate('contact');return false;"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
-            </ul>
+        <div class="footer-center">
+            <a href="https://www.linkedin.com/in/mohamed-sillah-kanu" target="_blank">LinkedIn</a>
+            <span class="footer-divider">|</span>
+            <a href="tel:+23276114224">+232 76 114224</a>
+            <span class="footer-divider">|</span>
+            <a href="mailto:info@informaticsconsultancyfirm.com">info@informaticsconsultancyfirm.com</a>
         </div>
-        <div class="footer-col">
-            <h4>Contact</h4>
-            <ul>
-                <li><a href="mailto:info@informaticsconsultancyfirm.com"><i class="fa-solid fa-envelope"></i> Email Us</a></li>
-                <li><a href="tel:+23276114224"><i class="fa-solid fa-phone"></i> +232 76 114224</a></li>
-                <li><a href="https://www.linkedin.com/in/mohamed-sillah-kanu" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
-                <li><a href="https://github.com/mohamedsillahkanu" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></li>
-            </ul>
+        <div class="footer-right">
+            <p>&copy; 2025 All Rights Reserved</p>
         </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2025 Informatics Consultancy Firm &mdash; Sierra Leone. All rights reserved.</p>
-        <div class="footer-bottom-badge">ICF-SL</div>
     </div>
 </footer>
 
@@ -2348,23 +2103,20 @@
 <div class="modal-overlay" id="modalOverlay" onclick="closeModalOnOutside(event)">
     <div class="modal-box">
         <div class="modal-head">
-            <div class="modal-head-left">
-                <div class="modal-badge"><i class="fa-solid fa-display"></i></div>
-                <div class="modal-head-title" id="modalTitle">Project Viewer</div>
-            </div>
+            <div class="modal-head-title" id="modalTitle">Project Viewer</div>
             <div class="modal-head-actions">
                 <a class="modal-action-btn btn-open-tab" id="modalExternalLink" href="#" target="_blank">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> New Tab
+                    Open in New Tab
                 </a>
                 <button class="modal-action-btn btn-close-modal" onclick="closeModal()">
-                    <i class="fa-solid fa-xmark"></i>
+                    Close
                 </button>
             </div>
         </div>
         <div style="flex:1;display:flex;flex-direction:column;overflow:hidden;">
             <div class="modal-loading" id="modalLoading">
                 <div class="spin"></div>
-                <p style="font-family:'Oswald',sans-serif;color:var(--muted);letter-spacing:1px;font-size:0.85rem;">LOADING PROJECT...</p>
+                <p style="font-family:'Oswald',sans-serif;color:var(--muted);letter-spacing:1px;font-size:0.9rem;">LOADING PROJECT</p>
             </div>
             <iframe id="modalFrame" class="modal-iframe" src="" style="display:none;"
                 onload="document.getElementById('modalLoading').style.display='none';this.style.display='block';"
@@ -2375,22 +2127,15 @@
 </div>
 
 <script>
-    // ═══════════════════════════════════════════════
     // NAVIGATION
-    // ═══════════════════════════════════════════════
     function navigate(section) {
-        // Hide all sections
         document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
-        // Show target section
         const target = document.getElementById('section-' + section);
         if (target) target.classList.add('active');
-        // Update nav tabs
         document.querySelectorAll('.nav-tab[data-section]').forEach(t => {
             t.classList.toggle('active', t.dataset.section === section);
         });
-        // Scroll to top
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        // Close mobile nav
         document.getElementById('navInner').classList.remove('mobile-open');
     }
 
@@ -2398,9 +2143,7 @@
         document.getElementById('navInner').classList.toggle('mobile-open');
     }
 
-    // ═══════════════════════════════════════════════
     // MODAL
-    // ═══════════════════════════════════════════════
     function openModal(url, title) {
         const overlay = document.getElementById('modalOverlay');
         const frame = document.getElementById('modalFrame');
@@ -2433,30 +2176,34 @@
 
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-    // ═══════════════════════════════════════════════
     // GALLERY FILTER
-    // ═══════════════════════════════════════════════
     function filterGallery(cat, btn) {
         document.querySelectorAll('.gfilter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        document.querySelectorAll('.gallery-frame').forEach(frame => {
-            const frameCat = frame.dataset.cat || '';
-            frame.style.display = (cat === 'all' || frameCat.includes(cat)) ? 'block' : 'none';
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            const itemCat = item.dataset.cat || '';
+            item.style.display = (cat === 'all' || itemCat.includes(cat)) ? 'block' : 'none';
         });
     }
 
-    // ═══════════════════════════════════════════════
+    // IMAGES FILTER
+    function filterImages(cat, btn) {
+        document.querySelectorAll('.img-filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.image-frame').forEach(frame => {
+            const frameCat = frame.dataset.category || '';
+            frame.style.display = (cat === 'all' || frameCat === cat) ? 'block' : 'none';
+        });
+    }
+
     // FORM
-    // ═══════════════════════════════════════════════
     function submitForm(btn) {
-        btn.innerHTML = '<i class="fa-solid fa-circle-check"></i> Message Sent!';
-        btn.style.background = 'var(--success)';
-        btn.style.borderColor = 'var(--success)';
+        btn.innerHTML = 'Message Sent!';
+        btn.style.opacity = '0.7';
         setTimeout(() => {
-            btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
-            btn.style.background = '';
-            btn.style.borderColor = '';
-        }, 3500);
+            btn.innerHTML = 'Send Message';
+            btn.style.opacity = '';
+        }, 3000);
     }
 </script>
 
