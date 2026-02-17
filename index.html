@@ -34,7 +34,7 @@
             font-weight: 400;
         }
 
-        /* HEADER - now the topmost element */
+        /* HEADER */
         header {
             background: var(--white);
             padding: 1.5rem 2rem;
@@ -209,7 +209,6 @@
             border-radius: 8px;
             margin-bottom: 2rem;
         }
-        
         
         .sbar-text h2 {
             font-family: 'Oswald', sans-serif;
@@ -478,7 +477,7 @@
             font-weight: 300;
         }
 
-        /* SERVICES + GALLERY (same card style) */
+        /* SERVICES + GALLERY */
         .services-grid, .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -585,7 +584,7 @@
             font-weight: 400;
         }
 
-        /* IMAGES SECTION - SIMPLIFIED: only images with text, no category bar */
+        /* IMAGES SECTION - with actual image support */
         .images-simple-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -611,15 +610,15 @@
             width: 100%;
             aspect-ratio: 4/3;
             background: linear-gradient(145deg, #e6f0ff, #b3c7e6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--primary-blue);
-            text-transform: uppercase;
+            overflow: hidden;
             border-bottom: 3px solid var(--primary-blue);
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .image-info {
@@ -1118,7 +1117,7 @@
 </head>
 <body>
 
-<!-- HEADER - now directly at top -->
+<!-- HEADER -->
 <header>
     <div class="brand">
         <div class="brand-logo">
@@ -1394,7 +1393,7 @@
     </div>
 </div>
 
-<!-- GALLERY SECTION (restyled like services) -->
+<!-- GALLERY SECTION -->
 <div class="page-section" id="section-gallery">
     <div class="section-inner">
         <div class="section-title-bar">
@@ -1467,7 +1466,7 @@
     </div>
 </div>
 
-<!-- IMAGES SECTION - SIMPLIFIED: only images with text, no category bar -->
+<!-- IMAGES SECTION - WITH ACTUAL IMAGE SUPPORT -->
 <div class="page-section" id="section-images">
     <div class="section-inner">
         <div class="section-title-bar">
@@ -1477,88 +1476,129 @@
             </div>
         </div>
         
-        <!-- Simple grid of image cards with text - no filters -->
+        <!-- Simple grid of image cards with actual images -->
         <div class="images-simple-grid">
-            <!-- Row 1 -->
+            <!-- CEO Image -->
             <div class="image-card">
-                <div class="image-placeholder">ceo.jpg</div>
+                <div class="image-placeholder">
+                    <img src="ceo.jpg" alt="Chief Executive Officer (CEO) - Mohamed Sillah Kanu">
+                </div>
                 <div class="image-info">
                     <h4>Chief Executive Officer (CEO)</h4>
-                    <p>Moahmed Sillah Kanu</p>
+                    <p>Mohamed Sillah Kanu</p>
+                </div>
+            </div>
+            
+            <!-- Project Images -->
+            <div class="image-card">
+                <div class="image-placeholder">
+                    <img src="project-01.png" alt="Data Dashboard Implementation">
+                </div>
+                <div class="image-info">
+                    <h4>Data Dashboard Implementation</h4>
+                    <p>Health analytics platform deployment</p>
                 </div>
             </div>
             <div class="image-card">
-                <div class="image-placeholder">project-02.png</div>
+                <div class="image-placeholder">
+                    <img src="project-02.png" alt="GIS Mapping Project">
+                </div>
                 <div class="image-info">
                     <h4>GIS Mapping Project</h4>
                     <p>Geospatial analysis for health facilities</p>
                 </div>
             </div>
             <div class="image-card">
-                <div class="image-placeholder">project-03.png</div>
+                <div class="image-placeholder">
+                    <img src="project-03.png" alt="ML Model Development">
+                </div>
                 <div class="image-info">
                     <h4>ML Model Development</h4>
                     <p>Predictive analytics implementation</p>
                 </div>
             </div>
+            
+            <!-- Team Images -->
             <div class="image-card">
-                <div class="image-placeholder">team-01.png</div>
+                <div class="image-placeholder">
+                    <img src="team-01.png" alt="Data Science Team">
+                </div>
                 <div class="image-info">
                     <h4>Data Science Team</h4>
                     <p>Our expert analysts at work</p>
                 </div>
             </div>
             <div class="image-card">
-                <div class="image-placeholder">team-02.png</div>
+                <div class="image-placeholder">
+                    <img src="team-02.png" alt="Leadership Meeting">
+                </div>
                 <div class="image-info">
                     <h4>Leadership Meeting</h4>
                     <p>Strategic planning session</p>
                 </div>
             </div>
             <div class="image-card">
-                <div class="image-placeholder">team-03.png</div>
+                <div class="image-placeholder">
+                    <img src="team-03.png" alt="Training Workshop">
+                </div>
                 <div class="image-info">
                     <h4>Training Workshop</h4>
                     <p>R and Python training session</p>
                 </div>
             </div>
+            
+            <!-- Events Images -->
             <div class="image-card">
-                <div class="image-placeholder">event-01.png</div>
+                <div class="image-placeholder">
+                    <img src="event-01.png" alt="Health Conference 2024">
+                </div>
                 <div class="image-info">
                     <h4>Health Conference 2024</h4>
                     <p>National malaria control program</p>
                 </div>
             </div>
             <div class="image-card">
-                <div class="image-placeholder">event-02.png</div>
+                <div class="image-placeholder">
+                    <img src="event-02.png" alt="Data Science Summit">
+                </div>
                 <div class="image-info">
                     <h4>Data Science Summit</h4>
                     <p>West Africa analytics forum</p>
                 </div>
             </div>
             <div class="image-card">
-                <div class="image-placeholder">event-03.png</div>
+                <div class="image-placeholder">
+                    <img src="event-03.png" alt="Project Launch">
+                </div>
                 <div class="image-info">
                     <h4>Project Launch</h4>
                     <p>New dashboard presentation</p>
                 </div>
             </div>
+            
+            <!-- Office Images -->
             <div class="image-card">
-                <div class="image-placeholder">office-01.png</div>
+                <div class="image-placeholder">
+                    <img src="office-01.png" alt="ICF Office Freetown">
+                </div>
                 <div class="image-info">
                     <h4>ICF Office Freetown</h4>
                     <p>Our headquarters workspace</p>
                 </div>
             </div>
             <div class="image-card">
-                <div class="image-placeholder">office-02.png</div>
+                <div class="image-placeholder">
+                    <img src="office-02.png" alt="Analysis Lab">
+                </div>
                 <div class="image-info">
                     <h4>Analysis Lab</h4>
                     <p>Data science workstation area</p>
                 </div>
             </div>
             <div class="image-card">
-                <div class="image-placeholder">office-03.png</div>
+                <div class="image-placeholder">
+                    <img src="office-03.png" alt="Conference Room">
+                </div>
                 <div class="image-info">
                     <h4>Conference Room</h4>
                     <p>Client meeting and presentation space</p>
